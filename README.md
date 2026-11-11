@@ -14,7 +14,7 @@ Then open `http://localhost:4173`.
 
 - `index.html` — semantic page content and metadata
 - `styles.css` — responsive visual system and component styles
-- `script.js` — theme preference, active navigation, scroll progress, clipboard, and reveal interactions
+- `script.js` — theme preference, navigation, scroll progress, clipboard, reveal, and progressive 3D interactions
 - `assets/` — portrait, project imagery, and favicon
 
 ## Featured live work
@@ -28,7 +28,7 @@ Then open `http://localhost:4173`.
 npx --yes html-validate@latest index.html
 ```
 
-The design includes a persistent light/dark theme, active-section navigation, reading progress, copy-to-clipboard contact details, a back-to-top control, keyboard-accessible mobile navigation, visible focus states, reduced-motion support, semantic landmarks, responsive layouts, lazy-loaded project imagery, and structured person metadata.
+The design includes a restrained 3D presentation with pointer-responsive tilt, dynamic lighting, layered project previews, and hero parallax. These effects progressively enhance fine-pointer devices and fall back to a static layout for touch input or reduced-motion preferences. The site also includes a persistent light/dark theme, active-section navigation, reading progress, copy-to-clipboard contact details, a back-to-top control, keyboard-accessible mobile navigation, visible focus states, semantic landmarks, responsive layouts, lazy-loaded project imagery, and structured person metadata.
 
 ## Image note
 
