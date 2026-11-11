@@ -1,6 +1,6 @@
 # Rozel Eliodra — Portfolio
 
-A responsive, single-page portfolio for Rozel Hyacinth Eliodra. The site is intentionally framework-free: semantic HTML, component-like CSS sections, and a small amount of progressive JavaScript.
+A responsive, single-page portfolio for Rozel Eliodra. The site is intentionally framework-free: semantic HTML, component-like CSS sections, and a small amount of progressive JavaScript.
 
 ## Preview locally
 
