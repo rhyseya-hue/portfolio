@@ -10,6 +10,9 @@ const copyEmailButton = document.querySelector('.copy-email');
 const toast = document.querySelector('.toast');
 const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
 const colorPreference = window.matchMedia('(prefers-color-scheme: dark)');
+const depthPointerPreference = window.matchMedia('(hover: hover) and (pointer: fine)');
+const hero = document.querySelector('.hero');
+const tiltElements = [...document.querySelectorAll('[data-tilt]')];
 const navLinks = [...menu.querySelectorAll('a[href^="#"]')];
 const observedSections = navLinks
   .map((link) => document.querySelector(link.getAttribute('href')))
@@ -178,6 +181,133 @@ copyEmailButton.addEventListener('click', async () => {
     showToast('Unable to copy. Email: rhyseya@gmail.com');
   }
 });
+
+const depthEffectsEnabled = () => depthPointerPreference.matches && !motionPreference.matches;
+const clamp = (value, minimum, maximum) => Math.min(Math.max(value, minimum), maximum);
+const tiltResets = [];
+let heroDepthFrame;
+let heroPointerX = 0;
+let heroPointerY = 0;
+
+const resetHeroDepth = () => {
+  if (heroDepthFrame) {
+    window.cancelAnimationFrame(heroDepthFrame);
+    heroDepthFrame = undefined;
+  }
+
+  heroPointerX = 0;
+  heroPointerY = 0;
+  hero.style.setProperty('--scene-x', '0px');
+  hero.style.setProperty('--scene-y', '0px');
+  hero.style.setProperty('--scene-inverse-x', '0px');
+  hero.style.setProperty('--scene-inverse-y', '0px');
+  hero.style.setProperty('--scene-far-x', '0px');
+  hero.style.setProperty('--scene-far-y', '0px');
+};
+
+const renderHeroDepth = () => {
+  hero.style.setProperty('--scene-x', `${(-heroPointerX * 10).toFixed(2)}px`);
+  hero.style.setProperty('--scene-y', `${(-heroPointerY * 7).toFixed(2)}px`);
+  hero.style.setProperty('--scene-inverse-x', `${(heroPointerX * 6).toFixed(2)}px`);
+  hero.style.setProperty('--scene-inverse-y', `${(heroPointerY * 4).toFixed(2)}px`);
+  hero.style.setProperty('--scene-far-x', `${(heroPointerX * 15).toFixed(2)}px`);
+  hero.style.setProperty('--scene-far-y', `${(heroPointerY * 11).toFixed(2)}px`);
+  heroDepthFrame = undefined;
+};
+
+const updateHeroDepth = (event) => {
+  if (!depthEffectsEnabled() || event.pointerType === 'touch') return;
+
+  const bounds = hero.getBoundingClientRect();
+  heroPointerX = clamp(((event.clientX - bounds.left) / bounds.width) * 2 - 1, -1, 1);
+  heroPointerY = clamp(((event.clientY - bounds.top) / bounds.height) * 2 - 1, -1, 1);
+
+  if (!heroDepthFrame) {
+    heroDepthFrame = window.requestAnimationFrame(renderHeroDepth);
+  }
+};
+
+hero.addEventListener('pointermove', updateHeroDepth, { passive: true });
+hero.addEventListener('pointerleave', resetHeroDepth);
+hero.addEventListener('pointercancel', resetHeroDepth);
+
+tiltElements.forEach((element) => {
+  const glare = document.createElement('span');
+  glare.className = 'tilt-glare';
+  glare.setAttribute('aria-hidden', 'true');
+  element.appendChild(glare);
+
+  const configuredMaximum = Number.parseFloat(element.dataset.tiltMax);
+  const configuredPerspective = Number.parseFloat(element.dataset.tiltPerspective);
+  const maximumTilt = Number.isFinite(configuredMaximum) ? clamp(configuredMaximum, 0, 12) : 5;
+  let pointerX = 0.5;
+  let pointerY = 0.5;
+  let tiltBounds;
+  let tiltFrame;
+
+  if (Number.isFinite(configuredPerspective)) {
+    element.style.setProperty('--tilt-perspective', `${clamp(configuredPerspective, 600, 2000)}px`);
+  }
+
+  const renderTilt = () => {
+    const rotateX = (0.5 - pointerY) * maximumTilt * 2;
+    const rotateY = (pointerX - 0.5) * maximumTilt * 2;
+
+    element.style.setProperty('--tilt-rotate-x', `${rotateX.toFixed(2)}deg`);
+    element.style.setProperty('--tilt-rotate-y', `${rotateY.toFixed(2)}deg`);
+    element.style.setProperty('--tilt-glare-x', `${(pointerX * 100).toFixed(1)}%`);
+    element.style.setProperty('--tilt-glare-y', `${(pointerY * 100).toFixed(1)}%`);
+    tiltFrame = undefined;
+  };
+
+  const updateTilt = (event) => {
+    if (!depthEffectsEnabled() || event.pointerType === 'touch') return;
+
+    if (!tiltBounds || event.type === 'pointerenter') {
+      tiltBounds = element.getBoundingClientRect();
+    }
+
+    pointerX = clamp((event.clientX - tiltBounds.left) / tiltBounds.width, 0, 1);
+    pointerY = clamp((event.clientY - tiltBounds.top) / tiltBounds.height, 0, 1);
+    element.classList.add('is-tilting');
+
+    if (!tiltFrame) {
+      tiltFrame = window.requestAnimationFrame(renderTilt);
+    }
+  };
+
+  const resetTilt = () => {
+    if (tiltFrame) {
+      window.cancelAnimationFrame(tiltFrame);
+      tiltFrame = undefined;
+    }
+
+    pointerX = 0.5;
+    pointerY = 0.5;
+    tiltBounds = undefined;
+    element.classList.remove('is-tilting');
+    element.style.setProperty('--tilt-rotate-x', '0deg');
+    element.style.setProperty('--tilt-rotate-y', '0deg');
+    element.style.setProperty('--tilt-glare-x', '50%');
+    element.style.setProperty('--tilt-glare-y', '50%');
+  };
+
+  element.addEventListener('pointerenter', updateTilt, { passive: true });
+  element.addEventListener('pointermove', updateTilt, { passive: true });
+  element.addEventListener('pointerleave', resetTilt);
+  element.addEventListener('pointercancel', resetTilt);
+  tiltResets.push(resetTilt);
+});
+
+const resetDepthEffects = () => {
+  resetHeroDepth();
+  tiltResets.forEach((resetTilt) => resetTilt());
+};
+
+depthPointerPreference.addEventListener('change', resetDepthEffects);
+motionPreference.addEventListener('change', resetDepthEffects);
+window.addEventListener('resize', resetDepthEffects);
+window.addEventListener('blur', resetDepthEffects);
 
 const reveals = document.querySelectorAll('.reveal');
 
