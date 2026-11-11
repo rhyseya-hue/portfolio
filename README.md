@@ -12,8 +12,10 @@ Then open `http://localhost:4173`.
 
 ## Structure
 
-- `index.html` — page content, styles, metadata, and interactions
-- `assets/` — portrait, project imagery, screenshots, and favicon
+- `index.html` — semantic page content and metadata
+- `styles.css` — responsive visual system and component styles
+- `script.js` — navigation and progressive reveal interactions
+- `assets/` — portrait, project imagery, and favicon
 
 ## Featured live work
 
