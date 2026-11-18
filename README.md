@@ -1,35 +1,46 @@
-# Rozel Eliodra — Portfolio
+# Rozel Eliodra — Portfolio studio
 
-A responsive, single-page portfolio for Rozel Eliodra. The site is intentionally framework-free: semantic HTML, component-like CSS sections, and a small amount of progressive JavaScript.
+A responsive, framework-free portfolio for Rozel Eliodra, a web developer and IT professional based in the Philippines.
 
-## Preview locally
+## Run locally
 
 ```bash
 python3 -m http.server 4173 --bind 0.0.0.0
 ```
 
-Then open `http://localhost:4173`.
+Open `http://localhost:4173`. No install, build step, third-party scripts, or runtime asset CDNs are required.
 
-## Structure
+## Explore the studio
 
-- `index.html` — semantic page content and metadata
-- `styles.css` — responsive visual system and component styles
-- `script.js` — theme preference, navigation, scroll progress, clipboard, reveal, and progressive 3D interactions
-- `assets/` — portrait, project imagery, and favicon
+- Move the pointer across **Byte** to tilt the scene. The computer, floppy disk, asterisk, and orb sit on separate CSS perspective planes. Its live SVG face looks toward the pointer.
+- Click, tap, or focus Byte and press **Enter** or **Space** to cycle its pixel expressions and greetings.
+- The control beside **Fig. 01 — Byte** pauses or resumes ambient animation. This preference and the light/dark palette are saved locally when storage is available.
+- Project posters open the live websites. Each card’s **Build notes** disclosure explains the implementation.
+- About, experience, education, email, phone, and location remain accessible through native links and semantic sections.
 
-## Featured live work
+## Files
+
+- `index.html` — content, structured metadata, accessible controls, icon symbols, and the pixel expressions.
+- `styles.css` — responsive layouts, palette tokens, depth planes, and motion.
+- `script.js` — small progressive enhancements for scene interaction, navigation, theme, and copy-to-clipboard.
+- `assets/studio/` — optimized, locally served WebP artwork. The generated studio stills were processed into separate transparent hero layers and two illustrated project covers.
+- `assets/fonts/` — self-hosted Space Grotesk, IBM Plex Mono, and Kalam, with their license files.
+- `assets/portrait.jpg` — the portfolio owner's original portrait.
+
+## Accessibility and motion
+
+Native navigation, project links, build notes, and contact information work without JavaScript. The mobile menu supports keyboard navigation and Escape. The scene never captures scrolling or requires dragging. Reduced-motion preferences disable the float, blink, tilt, bounce, and smooth scrolling while keeping the expressions usable. Ambient animations pause off-screen and in background tabs.
+
+## Featured work
 
 - [Pawpaw Cafe](https://pawpaw-cafe.vercel.app/)
 - [Marci Metzger](https://marcimetzger-sandy.vercel.app/)
 
-## Quality checks
+## Quick checks
 
 ```bash
-npx --yes html-validate@latest index.html
+node --check script.js
+npx --yes html-validate@11.21.1 index.html
 ```
 
-The design includes a restrained 3D presentation with pointer-responsive tilt, dynamic lighting, layered project previews, and hero parallax. These effects progressively enhance fine-pointer devices and fall back to a static layout for touch input or reduced-motion preferences. The site also includes a persistent light/dark theme, active-section navigation, reading progress, copy-to-clipboard contact details, a back-to-top control, keyboard-accessible mobile navigation, visible focus states, semantic landmarks, responsive layouts, lazy-loaded project imagery, and structured person metadata.
-
-## Image note
-
-The Pawpaw project preview uses a Pexels photograph from [photo 27969840](https://www.pexels.com/photo/two-plates-with-sandwiches-and-a-menu-on-them-27969840/). Other project imagery is sourced from the portfolio owner's existing work.
+The original Pawpaw preview photo (`assets/pawpaw-brunch.jpg`) is from [Pexels photo 27969840](https://www.pexels.com/photo/two-plates-with-sandwiches-and-a-menu-on-them-27969840/). The original project imagery remains available in `assets/`.
