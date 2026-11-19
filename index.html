@@ -26,6 +26,8 @@
       }
     </script>
     <link rel="stylesheet" href="styles.css">
+    <script src="assets/vendor/gsap/gsap.min.js" defer></script>
+    <script src="assets/vendor/gsap/ScrollTrigger.min.js" defer></script>
     <script src="script.js" defer></script>
     <script type="application/ld+json">
       {
@@ -147,7 +149,10 @@
         <div class="container hero-grid">
           <div class="hero-copy">
             <p class="availability"><span class="status-dot" aria-hidden="true"></span>Available for work</p>
-            <h1 id="hero-title">Serious code.<br><span>Playful pixels.</span></h1>
+            <h1 id="hero-title">
+              <span class="hero-line">Serious code.</span>
+              <span class="hero-line accent">Playful pixels.</span>
+            </h1>
             <p class="hero-intro">
               Hey, I’m <strong>Rozel Eliodra</strong> — a web developer turning ideas into thoughtful websites and
               interactive experiences.
@@ -257,6 +262,7 @@
             <figcaption class="model-label">
               <span aria-hidden="true"></span> Fig. 01 — Byte
               <button
+                hidden
                 class="motion-toggle icon-button js-control"
                 type="button"
                 aria-label="Pause ambient animation"
@@ -269,6 +275,12 @@
               </button>
             </figcaption>
           </figure>
+        </div>
+        <div class="container hero-foot">
+          <a class="scroll-cue" href="#work">
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v17m-6-6 6 6 6-6" /></svg>
+            Scroll to explore
+          </a>
         </div>
       </section>
 

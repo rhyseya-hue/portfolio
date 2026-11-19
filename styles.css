@@ -323,6 +323,12 @@ a {
 
 /* The introduction and its little 3D stage */
 .hero {
+  /* One screen including the sticky rail and its 1px divider. On short screens
+     the natural content height wins, so the controls are never cropped. */
+  min-height: calc(100vh - var(--header-height) - 1px);
+  min-height: calc(100dvh - var(--header-height) - 1px);
+  display: grid;
+  grid-template-rows: 1fr auto;
   position: relative;
   isolation: isolate;
   overflow: hidden;
@@ -341,7 +347,7 @@ a {
   grid-template-columns: 1fr 1.04fr;
   align-items: center;
   gap: 12px;
-  min-height: clamp(448px, 34vw, 525px);
+  align-content: center;
   padding-block: 24px 26px;
 }
 .hero-copy {
@@ -390,7 +396,37 @@ h1 {
   line-height: 0.99;
   letter-spacing: -0.056em;
 }
-h1 span {
+.hero-line {
+  display: block;
+}
+.hero-foot {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding-bottom: clamp(14px, 2.3vh, 28px);
+}
+.hero-foot::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--hairline);
+}
+.scroll-cue {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 32px;
+  color: var(--muted);
+  font: 500 10px/1.4 var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.scroll-cue .icon {
+  color: var(--accent);
+  width: 16px;
+  height: 16px;
+}
+.scroll-cue:hover {
   color: var(--accent);
 }
 .hero-intro {
@@ -623,49 +659,6 @@ h1 span {
   transform-origin: 50% 50%;
   transform-box: fill-box;
 }
-.studio-scene[data-ambient='on'] .blink {
-  animation: blink 7.5s step-end infinite;
-}
-.studio-scene[data-ambient='on'] .prop-disk {
-  animation: float 5.5s ease-in-out infinite;
-  --lift: -7px;
-}
-.studio-scene[data-ambient='on'] .prop-star {
-  animation: float 6.2s -0.75s ease-in-out infinite;
-  --lift: 7px;
-}
-.studio-scene[data-ambient='on'] .prop-orb {
-  animation: float 4.8s -0.5s ease-in-out infinite;
-  --lift: -8px;
-}
-.studio-scene[data-ambient='on'] .computer-layer {
-  animation: float 6.8s ease-in-out infinite;
-  --lift: -3px;
-}
-.studio-scene.is-idle * {
-  animation-play-state: paused !important;
-}
-@keyframes float {
-  0%,
-  100% {
-    translate: 0 0;
-  }
-  50% {
-    translate: 0 var(--lift);
-  }
-}
-@keyframes blink {
-  0%,
-  94%,
-  97%,
-  100% {
-    transform: scaleY(1);
-  }
-  95%,
-  96% {
-    transform: scaleY(0.15);
-  }
-}
 .prop {
   position: absolute;
   height: auto;
@@ -737,6 +730,9 @@ h1 span {
   border-radius: 50%;
   color: var(--muted);
 }
+.js .motion-toggle[hidden] {
+  display: none !important;
+}
 .motion-toggle:hover {
   color: var(--ink);
   border-color: var(--muted);
@@ -783,33 +779,6 @@ h1 span {
   opacity: 1;
   transform: translateY(0) rotate(-5deg);
 }
-.studio-scene.is-booped .computer-body {
-  animation: boop 0.55s cubic-bezier(0.2, 0.7, 0.3, 1);
-}
-.studio-scene[data-mood].is-booped .prop-star {
-  animation: star-turn 0.65s cubic-bezier(0.2, 0.7, 0.3, 1);
-}
-@keyframes boop {
-  0%,
-  100% {
-    transform: translateY(0) rotate(0);
-  }
-  20% {
-    transform: translateY(4px) scale(0.99, 0.98);
-  }
-  53% {
-    transform: translateY(-10px) rotate(2deg);
-  }
-}
-@keyframes star-turn {
-  from {
-    transform: translateZ(75px) rotate(8deg);
-  }
-  to {
-    transform: translateZ(75px) rotate(68deg);
-  }
-}
-
 /* A typeset strip, rather than a distracting moving marquee */
 .skill-strip {
   overflow-x: auto;
@@ -1536,7 +1505,6 @@ h2 {
     --header-height: 64px;
   }
   .hero-grid {
-    min-height: 414px;
     padding-block: 16px 18px;
   }
   h1 {
@@ -1576,7 +1544,6 @@ h2 {
   }
   .hero-grid {
     gap: 0;
-    min-height: 435px;
   }
   .hero-intro {
     max-width: 390px;
@@ -1625,9 +1592,6 @@ h2 {
   }
   .nav-actions {
     gap: 8px;
-  }
-  .hero-grid {
-    min-height: 413px;
   }
   h1 {
     font-size: 7.05vw;
@@ -1732,7 +1696,6 @@ h2 {
   .hero-grid {
     grid-template-columns: 1fr;
     gap: 0;
-    min-height: 0;
     padding-top: 34px;
     padding-bottom: 18px;
   }

@@ -8,10 +8,11 @@ A responsive, framework-free portfolio for Rozel Eliodra, a web developer and IT
 python3 -m http.server 4173 --bind 0.0.0.0
 ```
 
-Open `http://localhost:4173`. No install, build step, third-party scripts, or runtime asset CDNs are required.
+Open `http://localhost:4173`. No install, build step, or runtime CDN is required. GSAP and its ScrollTrigger plugin are served with the site.
 
 ## Explore the studio
 
+- The hero fills the viewport beneath the navigation and grows on shorter screens. Follow **Scroll to explore** to jump to the project archive.
 - Move the pointer across **Byte** to tilt the scene. The computer, floppy disk, asterisk, and orb sit on separate CSS perspective planes. Its live SVG face looks toward the pointer.
 - Click, tap, or focus Byte and press **Enter** or **Space** to cycle its pixel expressions and greetings.
 - The control beside **Fig. 01 — Byte** pauses or resumes ambient animation. This preference and the light/dark palette are saved locally when storage is available.
@@ -23,13 +24,14 @@ Open `http://localhost:4173`. No install, build step, third-party scripts, or ru
 - `index.html` — content, structured metadata, accessible controls, icon symbols, and the pixel expressions.
 - `styles.css` — responsive layouts, palette tokens, depth planes, and motion.
 - `script.js` — small progressive enhancements for scene interaction, navigation, theme, and copy-to-clipboard.
+- `assets/vendor/gsap/` — [GSAP 3.15.1](https://www.npmjs.com/package/gsap/v/3.15.1) and ScrollTrigger browser distributions, used under the [GSAP standard license](https://gsap.com/standard-license/).
 - `assets/studio/` — optimized, locally served WebP artwork. The generated studio stills were processed into separate transparent hero layers and two illustrated project covers.
 - `assets/fonts/` — self-hosted Space Grotesk, IBM Plex Mono, and Kalam, with their license files.
 - `assets/portrait.jpg` — the portfolio owner's original portrait.
 
 ## Accessibility and motion
 
-Native navigation, project links, build notes, and contact information work without JavaScript. The mobile menu supports keyboard navigation and Escape. The scene never captures scrolling or requires dragging. Reduced-motion preferences disable the float, blink, tilt, bounce, and smooth scrolling while keeping the expressions usable. Ambient animations pause off-screen and in background tabs.
+Native navigation, project links, build notes, and contact information work without JavaScript. The mobile menu supports keyboard navigation and Escape. The scene never captures scrolling or requires dragging. GSAP sequences the hero entrance, floating objects, blink, and click response. ScrollTrigger adds gentle hero parallax and one-time reveals without taking over native scrolling. Reduced-motion preferences disable these effects, tilt, and smooth scrolling while keeping the expressions usable. Ambient animations pause off-screen and in background tabs.
 
 ## Featured work
 
