@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#f4f2e9">
+    <meta
+      name="description"
+      content="An interactive restaurant website that takes a guest from discovering the menu to reserving a table.">
+    <meta property="og:site_name" content="Rozel Eliodra — Independent portfolio">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Pawpaw Cafe — Project notes by Rozel Eliodra">
+    <meta
+      property="og:description"
+      content="An interactive restaurant website that takes a guest from discovering the menu to reserving a table.">
+    <title>Pawpaw Cafe — Project notes by Rozel Eliodra</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="preload" as="font" type="font/woff2" href="../assets/fonts/anton.woff2" crossorigin>
+
+    <script>
+      try {
+        if (localStorage.getItem('portfolio-theme') === 'dark')
+          document.documentElement.dataset.theme = 'dark';
+      } catch {
+        /* Preferences are optional. */
+      }
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../assets/vendor/gsap/gsap.min.js" defer></script>
+    <script src="../assets/vendor/gsap/ScrollTrigger.min.js" defer></script>
+    <script src="../script.js" defer></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Pawpaw Cafe — Project notes",
+        "description": "An interactive restaurant website that takes a guest from discovering the menu to reserving a table.",
+        "author": { "@type": "Person", "name": "Rozel Eliodra", "jobTitle": "Web Developer" },
+        "about": { "@type": "WebSite", "name": "Pawpaw Cafe", "url": "https://pawpaw-cafe.vercel.app/" }
+      }
+    </script>
+  </head>
+  <body id="top" data-page="case">
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="mast" data-header>
+      <div class="wrap mast-inner">
+        <a class="signature" href="../index.html#home" aria-label="Rozel Eliodra, home"
+          ><svg class="re-mark" viewBox="0 0 55 36" aria-hidden="true">
+            <use href="../assets/press/symbols.svg#monogram" /></svg
+          ><span>Rozel Eliodra<span class="sig-period">.</span></span></a
+        >
+        <nav class="mast-nav" id="main-menu" aria-label="Primary navigation">
+          <a href="../index.html#work" data-section="work">Work <sup>(02)</sup></a>
+          <a href="../index.html#about" data-section="about">About</a>
+          <a href="../index.html#playground" data-section="playground">Playground</a>
+        </nav>
+        <div class="mast-actions">
+          <a class="talk-link" href="#contact"
+            >Let’s talk
+            <svg class="icon" aria-hidden="true" focusable="false">
+              <use href="../assets/press/symbols.svg#out" /></svg
+          ></a>
+          <button
+            class="menu-toggle enhanced"
+            type="button"
+            aria-expanded="false"
+            aria-controls="main-menu"
+            aria-label="Open navigation"
+          >
+            <span></span><span></span>
+          </button>
+        </div>
+      </div>
+      <div class="reading-line" aria-hidden="true"></div>
+    </header>
+    <main class="case-main paper" id="main">
+      <div class="wrap case-head">
+        <div class="case-breadcrumb">
+          <a class="utility" href="../index.html#work"
+            ><svg class="icon" aria-hidden="true" focusable="false">
+              <use href="../assets/press/symbols.svg#left" />
+            </svg>
+            All projects</a
+          ><span class="micro">Project file / 01 of 02</span>
+        </div>
+        <p class="chapter">
+          <span class="chapter-no">(01)</span><span class="chapter-line" aria-hidden="true"></span>Hospitality
+        </p>
+        <h1 class="display case-title">Pawpaw Cafe<span class="red-stop">.</span></h1>
+        <div class="case-deck">
+          <p>A table, a menu, and an easier way to bring the two together.</p>
+          <a
+            class="solid-link"
+            href="https://pawpaw-cafe.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Visit live site
+            <svg class="icon" aria-hidden="true" focusable="false">
+              <use href="../assets/press/symbols.svg#out" /></svg
+            ><span class="sr-only"> (opens in a new tab)</span></a
+          >
+        </div>
+        <figure class="case-billboard">
+          <span class="project-cover cover-paw" aria-hidden="true">
+            <span class="cover-id">RE / P—01</span><span class="cover-cross"></span>
+            <span class="cover-window"
+              ><span class="window-chrome"><i></i><i></i><i></i><small>pawpaw-cafe.vercel.app</small></span
+              ><span class="web-nav"
+                ><b class="pw-logo">pawpaw<span>café</span></b
+                ><span>Our story &nbsp; Menu &nbsp; Visit</span></span
+              >
+              <span class="pw-landing"
+                ><span class="pw-words"
+                  ><small>Woolloongabba · Brisbane</small
+                  ><b>All-day brunch<br>with a tropical <i>accent.</i></b
+                  ><span class="pw-book">Book a table ↗</span></span
+                ><img src="../assets/pawpaw-brunch.jpg" width="500" height="334" alt=""></span
+            ></span>
+            <span class="cover-legend">Interface study / Hospitality</span>
+          </span>
+          <figcaption class="micro">Fig. 01 / Illustrated interface preview — Brisbane, Australia</figcaption>
+        </figure>
+        <dl class="case-spec">
+          <div>
+            <dt>Contribution</dt>
+            <dd>Front-end development</dd>
+          </div>
+          <div>
+            <dt>Format</dt>
+            <dd>Restaurant website</dd>
+          </div>
+          <div>
+            <dt>Toolkit</dt>
+            <dd>React · Responsive UI · Vercel</dd>
+          </div>
+        </dl>
+      </div>
+      <section class="wrap case-story" aria-labelledby="story-title">
+        <div>
+          <p class="micro">01 / The approach</p>
+          <h2 id="story-title">From curiosity to a table.</h2>
+        </div>
+        <div>
+          <p class="story-lead">
+            Pawpaw is several experiences in one space: all-day brunch, Thai fusion dinners, and functions.
+            The website needs to help a first-time guest understand the difference without making a regular
+            hunt for the menu or booking link.
+          </p>
+          <p>
+            I developed a responsive front end that puts the guest journey first. Food photography and clear
+            menu sections introduce the café, while opening-hours information and booking actions stay close
+            to the decision to visit.
+          </p>
+        </div>
+      </section>
+      <section class="case-build" aria-labelledby="build-title">
+        <div class="wrap">
+          <p class="micro">02 / Development notes</p>
+          <h2 id="build-title" class="display">Inside the build<span class="red-stop">.</span></h2>
+          <ol class="build-list">
+            <li>
+              <span class="micro">(01)</span>
+              <h3>A menu worth exploring</h3>
+              <p>
+                Menu categories, dish descriptions, and food photography let visitors explore before they
+                book.
+              </p>
+            </li>
+            <li>
+              <span class="micro">(02)</span>
+              <h3>The right moment to visit</h3>
+              <p>
+                Opening-hours state and the day-and-night experience sections put practical details in
+                context.
+              </p>
+            </li>
+            <li>
+              <span class="micro">(03)</span>
+              <h3>A shorter mobile journey</h3>
+              <p>Reservation and contact actions stay within reach on smaller screens.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+      <div class="wrap next-project">
+        <p class="micro">Continue / Next file</p>
+        <a href="marci-metzger.html"
+          ><span class="display">Marci Metzger</span
+          ><svg class="icon" aria-hidden="true" focusable="false">
+            <use href="../assets/press/symbols.svg#right" /></svg
+        ></a>
+      </div>
+    </main>
+    <footer class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap contact-inner">
+        <div class="section-top">
+          <p class="chapter">
+            <span class="chapter-no">(04)</span><span class="chapter-line" aria-hidden="true"></span>Contact
+          </p>
+          <span class="micro">Correspondence / PH</span>
+        </div>
+        <div class="contact-head">
+          <div>
+            <p class="contact-pre">Have a project in mind?</p>
+            <h2 class="display" id="contact-title">Let’s talk<span>.</span></h2>
+          </div>
+          <a class="contact-arrow" href="mailto:rhyseya@gmail.com" aria-label="Email Rozel Eliodra"
+            ><svg class="icon" aria-hidden="true" focusable="false">
+              <use href="../assets/press/symbols.svg#out" /></svg
+          ></a>
+        </div>
+        <div class="contact-grid">
+          <div>
+            <p class="micro">01 / Email</p>
+            <div class="mail-row">
+              <a class="mail" href="mailto:rhyseya@gmail.com">rhyseya@gmail.com</a
+              ><button
+                class="copy enhanced"
+                type="button"
+                data-copy="rhyseya@gmail.com"
+                aria-label="Copy email address"
+                title="Copy email address"
+              >
+                <svg class="icon" aria-hidden="true" focusable="false">
+                  <use href="../assets/press/symbols.svg#copy" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div>
+            <p class="micro">02 / Phone</p>
+            <a href="tel:+639120771321">+63&nbsp;912&nbsp;077&nbsp;1321</a>
+          </div>
+          <div>
+            <p class="micro">03 / Location</p>
+            <p>Balo-i, Lanao del Norte, PH</p>
+          </div>
+        </div>
+      </div>
+      <div class="end-paper">
+        <div class="wrap colophon">
+          <span class="micro">© <span data-year>2026</span> Rozel Eliodra</span>
+          <div class="utilities">
+            <button class="utility enhanced" data-motion-toggle type="button" aria-pressed="true">
+              <svg class="icon" aria-hidden="true" focusable="false">
+                <use href="../assets/press/symbols.svg#motion" />
+              </svg>
+              <span>Motion on</span></button
+            ><button
+              class="utility enhanced"
+              data-theme-toggle
+              type="button"
+              aria-label="Switch to dark theme"
+            >
+              <svg class="icon" aria-hidden="true" focusable="false">
+                <use href="../assets/press/symbols.svg#contrast" /></svg
+              ><span>Paper mode</span>
+            </button>
+          </div>
+          <a class="utility up-link" href="#top"
+            >Back to top
+            <svg class="icon" aria-hidden="true" focusable="false">
+              <use href="../assets/press/symbols.svg#up" /></svg
+          ></a>
+        </div>
+      </div>
+    </footer>
+    <div class="notice" role="status" aria-live="polite" aria-atomic="true"></div>
+  </body>
+</html>
