@@ -82,7 +82,13 @@ function scheduleScrollUI() {
 window.addEventListener('scroll', scheduleScrollUI, { passive: true });
 window.addEventListener('resize', scheduleScrollUI);
 window.addEventListener('pageshow', scheduleScrollUI);
-for (const notes of document.querySelectorAll('.project-notes')) notes.addEventListener('toggle', scheduleScrollUI);
+for (const notes of document.querySelectorAll('.project-notes')) {
+  notes.addEventListener('toggle', () => {
+    scheduleScrollUI();
+    // An open disclosure moves the sections below it.
+    if (window.gsap && !reducedMotion.matches) window.ScrollTrigger?.refresh();
+  });
+}
 updateScrollUI();
 
 // The computer, props and live pixel face occupy separate depth planes.
@@ -133,20 +139,25 @@ reducedMotion.addEventListener('change', resetAllDepth);
 finePointer.addEventListener('change', resetAllDepth);
 window.addEventListener('blur', resetAllDepth);
 
-// Ambient motion is optional, and stops completely when the stage isn't visible.
+// Only the ambient loop is continuous. Suspend it off-screen and in background tabs.
 const motionButton = document.querySelector('.motion-toggle');
+let ambientLoop, greetingBounce;
 let ambientPaused = false;
+let stageInView = true;
 try {
   ambientPaused = localStorage.getItem('portfolio-ambient') === 'off';
 } catch {
   /* Optional storage. */
 }
 function syncAmbient() {
-  const running = !ambientPaused && !reducedMotion.matches;
-  stage.dataset.ambient = running ? 'on' : 'off';
-  const label = running ? 'Pause ambient animation' : 'Play ambient animation';
+  const enabled = Boolean(ambientLoop) && !ambientPaused && !reducedMotion.matches;
+  stage.dataset.ambient = enabled ? 'on' : 'off';
+  motionButton.hidden = !ambientLoop;
+  const label = enabled ? 'Pause ambient animation' : 'Play ambient animation';
   motionButton.setAttribute('aria-label', label);
   motionButton.title = label;
+  if (enabled) ambientLoop.paused(!stageInView || document.hidden);
+  else ambientLoop?.pause(0);
 }
 motionButton.addEventListener('click', () => {
   ambientPaused = !ambientPaused;
@@ -157,17 +168,97 @@ motionButton.addEventListener('click', () => {
   }
   syncAmbient();
 });
-reducedMotion.addEventListener('change', syncAmbient);
-syncAmbient();
-let stageInView = true;
-const syncVisibility = () => stage.classList.toggle('is-idle', !stageInView || document.hidden);
 if ('IntersectionObserver' in window) {
   new IntersectionObserver(([entry]) => {
     stageInView = entry.isIntersecting;
-    syncVisibility();
+    syncAmbient();
   }).observe(stage);
 }
-document.addEventListener('visibilitychange', syncVisibility);
+document.addEventListener('visibilitychange', syncAmbient);
+
+function enterStudio(gsap) {
+  const intro = gsap.timeline({ defaults: { ease: 'power3.out', clearProps: 'transform,opacity' } });
+  intro
+    .from('.availability', { y: 10, opacity: 0.3, duration: 0.4 }, 0)
+    .from('.hero-line', { y: 26, opacity: 0.25, stagger: 0.09, duration: 0.7 }, 0.05)
+    .from('.hero-intro, .hero-actions, .location-line', { y: 13, opacity: 0.25, stagger: 0.06, duration: 0.5 }, 0.24)
+    .from(buddy, { y: 26, scale: 0.92, rotation: -3, duration: 0.9, ease: 'back.out(1.35)' }, 0)
+    .from('.hero-foot', { y: 5, opacity: 0.3, duration: 0.45 }, 0.4);
+
+  const arrow = buddy.querySelector('.buddy-note path');
+  const length = arrow.getTotalLength();
+  intro.fromTo(
+    arrow,
+    { strokeDasharray: length, strokeDashoffset: length },
+    { strokeDashoffset: 0, duration: 0.48, ease: 'sine.inOut', clearProps: 'strokeDasharray,strokeDashoffset' },
+    0.43
+  );
+}
+
+function setupStudioMotion(gsap, scrollTrigger) {
+  if (!gsap) return; // Keep the portfolio and Byte's greetings usable without the animation library.
+  if (scrollTrigger) gsap.registerPlugin(scrollTrigger);
+  let playEntrance = !reducedMotion.matches && ['', '#home', '#top', '#main'].includes(location.hash);
+
+  // matchMedia reverts transforms, stops timelines and removes triggers when the OS preference changes.
+  gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', (context) => {
+    if (playEntrance && scrollY < header.offsetHeight) enterStudio(gsap);
+    playEntrance = false;
+
+    ambientLoop = gsap
+      .timeline({
+        id: 'byte-ambient',
+        paused: true,
+        repeat: -1,
+        defaults: { ease: 'sine.inOut', yoyo: true, repeat: 1 },
+      })
+      .to('.computer-layer', { y: -4, duration: 4 }, 0)
+      .to('.prop-disk', { x: -2, y: -8, rotation: '-=4', duration: 2, repeat: 3 }, 0)
+      .to('.prop-star', { x: 2, y: 8, duration: 4 }, 0)
+      .to('.prop-orb', { y: -10, duration: 2, repeat: 3 }, 0)
+      .to('.blink', { scaleY: 0.15, transformOrigin: '50% 50%', duration: 0.08 }, 6.3);
+
+    greetingBounce = gsap
+      .timeline({ id: 'byte-greeting', paused: true })
+      .to('.computer-body', { y: 4, scaleY: 0.97, scaleX: 1.02, duration: 0.09, ease: 'power2.in' })
+      .to('.computer-body', { y: -13, scaleY: 1.015, scaleX: 1, rotation: 2, duration: 0.2, ease: 'power2.out' })
+      .to('.computer-body', { y: 0, scaleY: 1, rotation: 0, duration: 0.32, ease: 'back.out(1.6)' })
+      .to('.prop-star', { rotation: '+=28', yoyo: true, repeat: 1, duration: 0.26, ease: 'sine.inOut' }, 0);
+
+    if (scrollTrigger) {
+      gsap.to(stage, {
+        yPercent: 6,
+        ease: 'none',
+        scrollTrigger: { trigger: '#home', start: 'top top', end: 'bottom top', scrub: true },
+      });
+      // Reveal on entry, not by hiding content on page load. Anchors and keyboard focus stay usable.
+      context.add('reveal', (items) =>
+        gsap.from(items, {
+          y: 20,
+          opacity: 0.4,
+          stagger: 0.075,
+          duration: 0.6,
+          ease: 'power3.out',
+          clearProps: 'transform,opacity',
+        })
+      );
+      scrollTrigger.batch('.section-heading, .project-card, .about-copy, .capability, .timeline li', {
+        start: 'top 96%',
+        once: true,
+        interval: 0.06,
+        batchMax: 4,
+        onEnter: context.reveal,
+      });
+    }
+    syncAmbient();
+    return () => {
+      ambientLoop = greetingBounce = null;
+      syncAmbient();
+    };
+  });
+}
+setupStudioMotion(window.gsap, window.ScrollTrigger);
+syncAmbient();
 
 const greetings = [
   { mood: 'love', words: 'Hello, human!' },
@@ -177,7 +268,7 @@ const greetings = [
 ];
 const bubble = document.querySelector('.byte-speech');
 let greetingIndex = 0;
-let bubbleTimer, moodTimer, boopTimer;
+let bubbleTimer, moodTimer;
 const coarsePointer = matchMedia('(pointer: coarse)');
 function labelBuddy() {
   const invitation = coarsePointer.matches ? 'Tap me!' : 'Click me!';
@@ -190,17 +281,11 @@ buddy.disabled = false;
 buddy.addEventListener('click', () => {
   clearTimeout(bubbleTimer);
   clearTimeout(moodTimer);
-  clearTimeout(boopTimer);
   const { mood, words } = greetings[greetingIndex++ % greetings.length];
   stage.dataset.mood = mood;
   bubble.textContent = words;
   stage.classList.add('speaking');
-  if (!reducedMotion.matches) {
-    stage.classList.remove('is-booped');
-    void buddy.offsetWidth; // Restart the one-shot bounce, including on a quick second tap.
-    stage.classList.add('is-booped');
-    boopTimer = setTimeout(() => stage.classList.remove('is-booped'), 700);
-  }
+  if (!reducedMotion.matches) greetingBounce?.restart();
   bubbleTimer = setTimeout(() => stage.classList.remove('speaking'), 2400);
   moodTimer = setTimeout(() => {
     stage.dataset.mood = 'happy';
