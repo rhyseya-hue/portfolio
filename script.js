@@ -261,6 +261,8 @@ if (archive) {
 }
 for (const record of document.querySelectorAll('.records details'))
   record.addEventListener('toggle', refreshPositions);
+// The screen picker is native; only the scroll measurements depend on its size.
+document.querySelector('.screen-picks')?.addEventListener('change', refreshPositions);
 
 function startMotion() {
   context?.revert();

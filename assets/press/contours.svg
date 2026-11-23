@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" fill="none" stroke="#d2daa9" stroke-opacity=".21" stroke-width="1.2">
+  <defs><path id="ridge" d="M-102 281c75 8 70-58 124-61s73 44 127 6 40-90 110-87 107-52 123-107 83-84 111-141"/></defs>
+  <use href="#ridge"/><use href="#ridge" transform="translate(7 15)"/><use href="#ridge" transform="translate(14 30)"/><use href="#ridge" transform="translate(20 45)"/><use href="#ridge" transform="translate(26 60)"/><use href="#ridge" transform="translate(30 75)"/>
+  <g transform="rotate(180 407 258)"><use href="#ridge"/><use href="#ridge" transform="translate(8 14)"/><use href="#ridge" transform="translate(15 28)"/><use href="#ridge" transform="translate(21 42)"/><use href="#ridge" transform="translate(25 56)"/></g>
+</svg>

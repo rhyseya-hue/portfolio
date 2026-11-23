@@ -24,7 +24,6 @@ function render() {
   proof.querySelector('[data-proof-name]').textContent = `${form} / ${ink}`.toUpperCase();
   proof.querySelector('title').textContent =
     `Form study: ${form} in ${ink.toLowerCase()} ink, rotated ${turn} degrees`;
-  lab.querySelector('.ink-name').textContent = ink;
   lab.querySelector('#angle-value').value = `${turn}°`;
   angle.setAttribute('aria-valuetext', `${turn} degrees`);
 }
@@ -87,5 +86,5 @@ render();
 proof.querySelector('[data-first-frame]').remove();
 lab.querySelector('.lab-controls').hidden = false;
 lab.classList.add('is-ready');
-lab.querySelector('.lab-hint').textContent = 'Drag to turn / or use the rotation slider';
+lab.querySelector('.lab-hint').textContent = 'Drag to turn or use the slider';
 window.dispatchEvent(new Event('folio:lab-ready'));

@@ -26,6 +26,7 @@
       }
     </script>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="work.css">
     <script src="assets/vendor/gsap/gsap.min.js" defer></script>
     <script src="assets/vendor/gsap/ScrollTrigger.min.js" defer></script>
     <script src="script.js" defer></script>
@@ -147,9 +148,13 @@
               ></span>
             </div>
             <figcaption class="art-caption">
-              <span class="micro"><b>Fig. 01</b> / Hand study</span
-              ><span class="art-tools enhanced"
-                ><button
+              <span class="plate-credit"><b class="micro">Fig. 01</b><span>Hand study</span></span>
+              <span class="art-tools enhanced">
+                <button class="remix" type="button" data-remix>
+                  <span class="ink-pair" aria-hidden="true"></span>Remix ink
+                  <span class="mix-counter" aria-hidden="true">1/3</span>
+                </button>
+                <button
                   class="plate-motion"
                   data-motion-toggle
                   type="button"
@@ -159,14 +164,9 @@
                 >
                   <svg class="icon" aria-hidden="true" focusable="false">
                     <use href="assets/press/symbols.svg#pause" />
-                  </svg></button
-                ><button class="remix" type="button" data-remix>
-                  <svg class="icon" aria-hidden="true" focusable="false">
-                    <use href="assets/press/symbols.svg#remix" />
                   </svg>
-                  Remix ink <span class="mix-counter" aria-hidden="true">1/3</span>
-                </button></span
-              >
+                </button>
+              </span>
             </figcaption>
           </figure>
         </div>
@@ -232,102 +232,136 @@
               <span class="chapter-no">(01)</span><span class="chapter-line" aria-hidden="true"></span>Project
               archive
             </p>
-            <span class="micro">Index / Two projects</span>
+            <span class="micro">Two project files</span>
           </div>
           <div class="work-head">
             <h2 class="display section-title" id="work-title">
               Selected work<span class="red-stop">.</span>
             </h2>
             <div class="view-switch enhanced" role="group" aria-label="Project layout">
-              <button type="button" data-view="gallery" aria-pressed="true">
+              <button type="button" aria-controls="project-archive" data-view="gallery" aria-pressed="true">
                 <svg class="icon" aria-hidden="true" focusable="false">
                   <use href="assets/press/symbols.svg#grid" /></svg
                 >Gallery</button
-              ><button type="button" data-view="index" aria-pressed="false">
+              ><button type="button" aria-controls="project-archive" data-view="index" aria-pressed="false">
                 <svg class="icon" aria-hidden="true" focusable="false">
                   <use href="assets/press/symbols.svg#list" /></svg
                 >Index
               </button>
             </div>
           </div>
-          <div class="work-archive" data-layout="gallery">
-            <article class="work-entry">
-              <a class="project-link" href="work/pawpaw-cafe.html"
-                ><span class="project-cover cover-paw" aria-hidden="true">
-                  <span class="cover-id">RE / P—01</span><span class="cover-cross"></span>
-                  <span class="cover-window"
-                    ><span class="window-chrome"
-                      ><i></i><i></i><i></i><small>pawpaw-cafe.vercel.app</small></span
-                    ><span class="web-nav"
-                      ><b class="pw-logo">pawpaw<span>café</span></b
-                      ><span>Our story &nbsp; Menu &nbsp; Visit</span></span
-                    >
-                    <span class="pw-landing"
-                      ><span class="pw-words"
-                        ><small>Woolloongabba · Brisbane</small
-                        ><b>All-day brunch<br>with a tropical <i>accent.</i></b
-                        ><span class="pw-book">Book a table ↗</span></span
-                      ><img
-                        src="assets/pawpaw-brunch.jpg"
-                        width="500"
-                        height="334"
-                        alt=""
-                        loading="lazy"></span
-                  ></span>
-                  <span class="cover-legend">Interface study / Hospitality</span>
-                </span>
-                <div class="entry-info">
-                  <span class="entry-num micro">N° 01</span>
-                  <div class="entry-titles">
-                    <span class="entry-category micro">Hospitality / Website</span>
-                    <h3 class="entry-name">Pawpaw Cafe</h3>
-                  </div>
-                  <span class="entry-arrow"
-                    ><svg class="icon" aria-hidden="true" focusable="false">
-                      <use href="assets/press/symbols.svg#out" /></svg
-                  ></span>
+          <div class="work-archive" id="project-archive" data-layout="gallery">
+            <article class="work-entry entry-cafe" aria-labelledby="title-pawpaw-cafe">
+              <div class="proof-art proof-cafe" aria-hidden="true">
+                <span class="proof-imprint">Plate 01 / Table study</span
+                ><span class="registration-cross"></span>
+                <div class="brunch-slip">
+                  <img
+                    src="assets/pawpaw-brunch.jpg"
+                    width="500"
+                    height="334"
+                    loading="lazy"
+                    decoding="async"
+                    alt="">
+                  <span>Brunch in Brisbane.</span>
                 </div>
-                <span class="sr-only">Read project story</span></a
-              >
+                <img
+                  class="phone-print"
+                  src="assets/screens/pawpaw-arrival.webp"
+                  width="780"
+                  height="1220"
+                  loading="lazy"
+                  decoding="async"
+                  alt="">
+                <span class="press-colors"><i></i><i></i><i></i></span>
+              </div>
+              <div class="entry-info">
+                <p class="entry-meta">
+                  <span class="file-no">File 01</span
+                  ><span>Hospitality <span aria-hidden="true">/</span> Brisbane, AU</span>
+                </p>
+                <h3 class="entry-name" id="title-pawpaw-cafe">Pawpaw Cafe</h3>
+                <p class="entry-summary">
+                  I built the dietary filters, opening-hours display, and booking links for Pawpaw’s café
+                  site.
+                </p>
+                <p class="entry-tech">React · Front-end development</p>
+                <div class="entry-actions">
+                  <a class="project-link" href="work/pawpaw-cafe.html"
+                    >Project notes<span class="sr-only">: Pawpaw Cafe</span>
+                    <svg class="icon" aria-hidden="true" focusable="false">
+                      <use href="assets/press/symbols.svg#right" /></svg
+                  ></a>
+                  <a
+                    class="visit-link"
+                    href="https://pawpaw-cafe.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Live site<span class="sr-only">: Pawpaw Cafe (opens in a new tab)</span>
+                    <svg class="icon" aria-hidden="true" focusable="false">
+                      <use href="assets/press/symbols.svg#out" /></svg
+                  ></a>
+                </div>
+              </div>
             </article>
-            <article class="work-entry">
-              <a class="project-link" href="work/marci-metzger.html"
-                ><span class="project-cover cover-marci" aria-hidden="true">
-                  <span class="cover-id">RE / P—02</span><span class="cover-cross"></span>
-                  <span class="cover-window"
-                    ><span class="window-chrome"
-                      ><i></i><i></i><i></i><small>marcimetzger-sandy.vercel.app</small></span
-                    ><span class="web-nav"
-                      ><b class="mm-logo">Marci Metzger</b
-                      ><span>Homes &nbsp; About &nbsp; Contact</span></span
-                    >
-                    <span class="mm-landing"
-                      ><img
-                        src="assets/marci-hero.webp"
-                        width="1600"
-                        height="1063"
-                        alt=""
-                        loading="lazy"><span class="mm-words"
-                        ><small>Your Pahrump realtor</small><b>Life looks better<br><i>from here.</i></b
-                        ><span>Explore homes ↗</span></span
-                      ></span
-                    ></span
+            <article class="work-entry entry-atlas" aria-labelledby="title-marci-metzger">
+              <div class="proof-art proof-atlas" aria-hidden="true">
+                <span class="proof-imprint">Plate 02 / Field guide</span
+                ><span class="registration-cross"></span>
+                <div class="map-key">
+                  <svg
+                    class="north-arrow"
+                    viewBox="0 0 40 55"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linejoin="round"
                   >
-                  <span class="cover-legend">Interface study / Real estate</span>
-                </span>
-                <div class="entry-info">
-                  <span class="entry-num micro">N° 02</span>
-                  <div class="entry-titles">
-                    <span class="entry-category micro">Real estate / Website</span>
-                    <h3 class="entry-name">Marci Metzger</h3>
-                  </div>
-                  <span class="entry-arrow"
-                    ><svg class="icon" aria-hidden="true" focusable="false">
-                      <use href="assets/press/symbols.svg#out" /></svg
-                  ></span>
+                    <path d="M20 3 33 40 20 32 7 40 20 3Z" />
+                    <path d="M20 3v29l13 8z" fill="currentColor" />
+                    <path d="M5 47h30m-30-3v6m15-6v6m15-6v6" />
+                  </svg>
+                  <b>NV<span>.</span></b
+                  ><small>Pahrump<br>Nevada</small>
                 </div>
-                <span class="sr-only">Read project story</span></a
-              >
+                <img
+                  class="survey-print"
+                  src="assets/screens/marci-search.webp"
+                  srcset="assets/screens/marci-search-860.webp 860w, assets/screens/marci-search.webp 1440w"
+                  sizes="(max-width: 760px) 70vw, (max-width: 1650px) 45vw, 700px"
+                  width="1440"
+                  height="1069"
+                  loading="lazy"
+                  decoding="async"
+                  alt="">
+                <span class="survey-scale"></span>
+              </div>
+              <div class="entry-info">
+                <p class="entry-meta">
+                  <span class="file-no">File 02</span
+                  ><span>Real estate <span aria-hidden="true">/</span> Pahrump, US</span>
+                </p>
+                <h3 class="entry-name" id="title-marci-metzger">Marci Metzger</h3>
+                <p class="entry-summary">
+                  I built a home-search interface for buyers and a separate valuation form for sellers.
+                </p>
+                <p class="entry-tech">HTML · CSS · JavaScript</p>
+                <div class="entry-actions">
+                  <a class="project-link" href="work/marci-metzger.html"
+                    >Project notes<span class="sr-only">: Marci Metzger</span>
+                    <svg class="icon" aria-hidden="true" focusable="false">
+                      <use href="assets/press/symbols.svg#right" /></svg
+                  ></a>
+                  <a
+                    class="visit-link"
+                    href="https://marcimetzger-sandy.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Live site<span class="sr-only">: Marci Metzger (opens in a new tab)</span>
+                    <svg class="icon" aria-hidden="true" focusable="false">
+                      <use href="assets/press/symbols.svg#out" /></svg
+                  ></a>
+                </div>
+              </div>
             </article>
           </div>
         </div>
@@ -545,32 +579,18 @@
               <fieldset>
                 <legend>02 / Ink color</legend>
                 <div class="ink-row">
-                  <label title="Ultramarine"
-                    ><input
-                      type="radio"
-                      name="ink"
-                      value="#2449c9"
-                      data-name="Ultramarine"
-                      aria-label="Ultramarine"
-                      checked><span style="--swatch: #2449c9" aria-hidden="true"></span></label
-                  ><label title="Vermilion"
-                    ><input
-                      type="radio"
-                      name="ink"
-                      value="#c34327"
-                      data-name="Vermilion"
-                      aria-label="Vermilion"><span
-                      style="--swatch: #c34327"
-                      aria-hidden="true"
-                    ></span></label
-                  ><label title="Carbon"
-                    ><input
-                      type="radio"
-                      name="ink"
-                      value="#282824"
-                      data-name="Carbon"
-                      aria-label="Carbon"><span style="--swatch: #282824" aria-hidden="true"></span></label
-                  ><span class="ink-name">Ultramarine</span>
+                  <label style="--swatch: #2449c9">
+                    <input type="radio" name="ink" value="#2449c9" data-name="Ultramarine" checked>
+                    <span>Ultramarine</span>
+                  </label>
+                  <label style="--swatch: #c34327">
+                    <input type="radio" name="ink" value="#c34327" data-name="Vermilion">
+                    <span>Vermilion</span>
+                  </label>
+                  <label style="--swatch: #282824">
+                    <input type="radio" name="ink" value="#282824" data-name="Carbon">
+                    <span>Carbon</span>
+                  </label>
                 </div>
               </fieldset>
               <div class="angle-control">
