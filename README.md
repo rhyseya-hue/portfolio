@@ -1,6 +1,6 @@
-# Rozel Eliodra — Independent portfolio
+# Rozel Eliodra — Creative Developer
 
-A personal web-development portfolio presented as an interactive print folio. The cover combines oversized type, a halftone hand, and a sculpted asterisk. Inside are two project stories, Rozel’s working record, and a geometric print you can design and download.
+An independent web-development portfolio with an industrial, minimal visual system: blueprint grids, equipment-style labels, bold type, and a safety-orange accent. The site includes two project case studies, a profile and experience record, and an interactive geometry lab.
 
 ## Run locally
 
@@ -8,32 +8,32 @@ A personal web-development portfolio presented as an interactive print folio. Th
 python3 -m http.server 4173 --bind 0.0.0.0
 ```
 
-Open `http://localhost:4173/`. There is no install or build step. Pages, scripts, fonts, and artwork use relative URLs so the same files work at a domain root or under `/portfolio/` on GitHub Pages.
+Open `http://localhost:4173/`. There is no install or build step. Pages, scripts, fonts, and artwork use relative URLs so the same files work at a domain root or in a subdirectory.
 
 ## Explore
 
-- **Cover:** Move the pointer over the hand for depth, or use **Remix ink** to pull a different colorway. The cover itself is at least one viewport tall and can grow to accommodate larger text.
-- **Work:** The gallery pairs Pawpaw’s brunch table and mobile landing screen with a map-inspired spread for Marci’s property search. Both the gallery and compact index explain Rozel’s contribution and link separately to the project notes and the live site.
-- **Screen studies:** In [Pawpaw Cafe](work/pawpaw-cafe.html), switch from the arrival screen to the filtered menu. In [Marci Metzger](work/marci-metzger.html), compare the buyer search with the seller enquiry. Each capture has a caption and a full-size link. The picker works without JavaScript; in print and in browsers without CSS `:has()`, both studies appear in sequence.
-- **Profile:** Native disclosures cover experience and education. Contact details work without scripts.
-- **Form Lab:** Choose a knot, ring, or ribbon, then an ink. Drag horizontally or use the keyboard-accessible rotation slider. **Save SVG** downloads the current drawing, captions, and paper as a standalone vector file. Nothing is uploaded.
+- **Work:** Browse the gallery or switch to the compact index. Each project has its own notes and a separate link to the live site.
+- **Project notes:** In [Pawpaw Cafe](work/pawpaw-cafe.html), switch between the arrival screen and filtered menu. In [Marci Metzger](work/marci-metzger.html), compare the buyer search and seller enquiry. Each capture has a caption and a full-size link.
+- **Profile:** Expand the experience and education records to read more.
+- **Form Lab:** Choose a knot, ring, or ribbon and an ink. Drag horizontally or use the keyboard-accessible rotation slider. **Save SVG** downloads the current drawing and captions as a standalone vector file; nothing is uploaded.
+- **Contact:** Use the email or phone links, or copy the email address.
 
 ## Motion and accessibility
 
-GSAP sequences the cover entrance and hand movement. ScrollTrigger handles the offset printing plate and one-time section entrances; scrolling and links remain native. The pause control beside **Remix ink** and the motion setting in the footer both stop animation. A device’s reduced-motion setting takes precedence. The floating hand and moving type strip also pause outside the visible page or in a background tab.
+Scrolling and links are native. The footer controls let visitors change the theme or pause animation; a device’s reduced-motion setting takes precedence. Layout, theme, and motion preferences are saved when local storage is available. The mobile menu supports keyboard navigation and Escape.
 
-Layout, theme, and motion preferences are saved if local storage is available. The mobile menu supports keyboard navigation and Escape. Without JavaScript, navigation, both stories, disclosures, contact links, and the initial print are still available. If the animation library fails to load, the other controls still work.
+Without JavaScript, navigation, project notes, disclosures, contact links, and the initial geometry plate are still available. The project screen picker uses CSS `:has()` and works without JavaScript in supporting browsers; otherwise both studies are shown in sequence. Both studies also appear in print. If the animation library fails to load, the other controls still work.
 
 ## Files and maintenance
 
 | Path | Purpose |
 | --- | --- |
-| `index.html`, `work/*.html` | Semantic pages, metadata, real project links, and shared navigation/contact markup. |
-| `styles.css`, `work.css` | Shared page styles; gallery spreads, reading index, case screen pickers, and print layouts. |
-| `script.js` | Menu, reading progress, local time in the Philippines, preferences, archive views, and GSAP motion. |
-| `geometry.js`, `lab.js` | Parametric surfaces and perspective projection; lab controls and SVG export. |
-| `assets/press/` | Original hand illustration, grain tile, contour drawing, icon sprite, and static knot plate. |
-| `assets/screens/` | Self-hosted WebP captures of the actual project interfaces. The larger landscape capture also has an 860px variant for smaller displays. |
+| `index.html`, `work/*.html` | Semantic pages, metadata, project links, and shared navigation/contact markup. |
+| `styles.css`, `work.css` | Shared design system, responsive layouts, project archive, case studies, and print styles. |
+| `script.js` | Menu, reading progress, local time in the Philippines, preferences, archive views, and optional GSAP motion. |
+| `geometry.js`, `lab.js` | Parametric surfaces, projection, lab controls, and SVG export. |
+| `assets/press/` | Icon sprite and static knot plate, plus artwork from earlier iterations. |
+| `assets/screens/` | Self-hosted WebP captures of the project interfaces. |
 | `tools/plot-default.mjs` | Regenerates the no-JavaScript plate after changing the projection. |
 
 Optional checks (Node 22+):
@@ -48,8 +48,7 @@ Run `node tools/plot-default.mjs` if the default drawing changes. The site itsel
 
 ## Credits
 
-- Art direction references: [K95](https://k95.it/), [Juan Mora](https://juanmora.co/), [Flesh and Bones](https://wearefleshandbones.com/), [Lovely Friendly](https://lovelyfriendly.com/), and [Digital Panda](https://www.digitalpanda.com/). The artwork and layouts here are original, not assets from those sites.
-- The interface screens were captured locally from the public [Pawpaw Cafe build](https://github.com/rhyseya-hue/pawpaw-cafe/tree/f939ec2fb9065655b666d31450d3a440114b09b3) and [Marci Metzger build](https://github.com/rhyseya-hue/marcimetzger/tree/1c65cf5ee6d1b49435e60f44b761a7a29249818a). They are static portfolio exhibits, not live booking or property-search widgets.
-- The cover hand was generated for this folio and processed into a transparent WebP. The portrait and project photos come from the existing portfolio. The Pawpaw preview uses [Pexels photo 27969840](https://www.pexels.com/photo/two-plates-with-sandwiches-and-a-menu-on-them-27969840/).
-- Anton, Space Grotesk, IBM Plex Mono, and Kalam are self-hosted in `assets/fonts/`, alongside their licenses.
+- Interface screens were captured from the public [Pawpaw Cafe build](https://github.com/rhyseya-hue/pawpaw-cafe/tree/f939ec2fb9065655b666d31450d3a440114b09b3) and [Marci Metzger build](https://github.com/rhyseya-hue/marcimetzger/tree/1c65cf5ee6d1b49435e60f44b761a7a29249818a). They are static portfolio exhibits, not live booking or property-search widgets.
+- The portrait and project photos come from the existing portfolio. The asset library also includes a generated hand illustration from an earlier version and a Pawpaw image based on [Pexels photo 27969840](https://www.pexels.com/photo/two-plates-with-sandwiches-and-a-menu-on-them-27969840/).
+- Anton, Space Grotesk, and IBM Plex Mono are self-hosted in `assets/fonts/`, alongside their licenses. Kalam remains in the asset library from an earlier version.
 - [GSAP 3.15.1](https://www.npmjs.com/package/gsap/v/3.15.1) and ScrollTrigger are served from `assets/vendor/gsap/` under the [GSAP standard license](https://gsap.com/standard-license/).

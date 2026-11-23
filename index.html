@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="theme-color" content="#f4f2e9">
+    <meta name="theme-color" content="#ecece8">
     <meta
       name="description"
       content="The independent portfolio of Rozel Eliodra. Web development, interactive experiments, and selected projects from the Philippines.">
@@ -16,7 +16,6 @@
     <title>Rozel Eliodra — Creative Developer</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="preload" as="font" type="font/woff2" href="assets/fonts/anton.woff2" crossorigin>
-    <link rel="preload" as="image" type="image/webp" href="assets/press/hand-study.webp">
     <script>
       try {
         if (localStorage.getItem('portfolio-theme') === 'dark')
@@ -53,29 +52,21 @@
     <a class="skip" href="#main">Skip to content</a>
     <header class="mast" data-header>
       <div class="wrap mast-inner">
-        <a class="signature" href="#home" aria-label="Rozel Eliodra, home"
-          ><svg class="re-mark" viewBox="0 0 55 36" aria-hidden="true">
-            <use href="assets/press/symbols.svg#monogram" /></svg
-          ><span>Rozel Eliodra<span class="sig-period">.</span></span></a
-        >
+        <a class="signature" href="#home" aria-label="Rozel Eliodra, home">
+          <span class="logo-mark" aria-hidden="true">R.</span>
+          <span class="logo-text"><strong>Rozel Eliodra</strong><small>Creative Developer</small></span>
+        </a>
         <nav class="mast-nav" id="main-menu" aria-label="Primary navigation">
           <a href="#work" data-section="work">Work <sup>(02)</sup></a>
           <a href="#about" data-section="about">About</a>
-          <a href="#playground" data-section="playground">Playground</a>
+          <a href="#playground" data-section="playground">Lab</a>
         </nav>
         <div class="mast-actions">
-          <a class="talk-link" href="#contact"
-            >Let’s talk
-            <svg class="icon" aria-hidden="true" focusable="false">
-              <use href="assets/press/symbols.svg#out" /></svg
-          ></a>
-          <button
-            class="menu-toggle enhanced"
-            type="button"
-            aria-expanded="false"
-            aria-controls="main-menu"
-            aria-label="Open navigation"
-          >
+          <span class="mast-status"><span class="status-dot" aria-hidden="true"></span>Open to work</span>
+          <a class="talk-link" href="#contact">Let’s talk
+            <svg class="icon" aria-hidden="true" focusable="false"><use href="assets/press/symbols.svg#out" /></svg>
+          </a>
+          <button class="menu-toggle enhanced" type="button" aria-expanded="false" aria-controls="main-menu" aria-label="Open navigation">
             <span></span><span></span>
           </button>
         </div>
@@ -83,319 +74,145 @@
       <div class="reading-line" aria-hidden="true"></div>
     </header>
     <main id="main">
-      <section class="hero paper" id="home" aria-labelledby="cover-title">
-        <div class="wrap folio-line">
-          <p class="micro"><span class="index-box" aria-hidden="true"></span>Independent portfolio</p>
-          <p class="micro">Vol. 01 <span class="slash">/</span> Edition 2026</p>
+      <section class="hero" id="home" aria-labelledby="cover-title">
+        <div class="wrap hero-meta">
+          <p class="micro"><span class="index-box" aria-hidden="true"></span>Portfolio — Vol. 01</p>
+          <p class="micro hero-meta-right">Philippines <span class="slash">/</span> <span data-clock>UTC+08:00</span></p>
         </div>
-        <div class="wrap cover-grid">
-          <div class="cover-copy">
+        <div class="wrap hero-grid">
+          <div class="hero-copy">
             <p class="available micro"><span aria-hidden="true"></span>Available for work</p>
-            <h1 class="display cover-title" id="cover-title">
+            <h1 class="display hero-title" id="cover-title">
               <span class="title-line">Creative</span>
-              <span class="title-line">Developer<span class="red-stop">.</span></span>
+              <span class="title-line">Developer<span class="accent-stop">.</span></span>
             </h1>
-            <p class="cover-intro">
-              I’m <strong>Rozel Eliodra</strong>, a web developer from the Philippines building thoughtful
-              websites with a playful point of view.
+            <p class="hero-intro">
+              I’m <strong>Rozel Eliodra</strong>, a web developer from the Philippines building fast,
+              usable websites — engineered to work, designed to be remembered.
             </p>
-            <div class="cover-actions">
-              <a class="solid-link" href="#work"
-                >Explore my work
-                <svg class="icon" aria-hidden="true" focusable="false">
-                  <use href="assets/press/symbols.svg#down-right" /></svg></a
-              ><a class="under-link" href="#about"
-                >About me
-                <svg class="icon" aria-hidden="true" focusable="false">
-                  <use href="assets/press/symbols.svg#out" /></svg
-              ></a>
+            <div class="hero-actions">
+              <a class="solid-link" href="#work">View work
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="assets/press/symbols.svg#down-right" /></svg></a>
+              <a class="outline-link" href="#about">About me
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="assets/press/symbols.svg#out" /></svg></a>
             </div>
+            <dl class="hero-stats">
+              <div><dt>Projects</dt><dd>02 shipped</dd></div>
+              <div><dt>Base</dt><dd>Balo-i, PH</dd></div>
+              <div><dt>Focus</dt><dd>Front-end</dd></div>
+            </dl>
           </div>
-          <figure
-            class="print-cover"
-            data-mix="0"
-            aria-label="Hand study: a halftone hand holding a sculpted asterisk"
-          >
-            <div class="art-stage">
-              <span class="register rg-a" aria-hidden="true"></span
-              ><span class="register rg-b" aria-hidden="true"></span>
-              <div class="art-plane" aria-hidden="true">
-                <div class="ink-pop">
-                  <div class="underprint"></div>
-                  <div class="ink-disc"></div>
-                  <div class="hand-float">
-                    <img
-                      class="hand-print"
-                      src="assets/press/hand-study.webp"
-                      width="1016"
-                      height="815"
-                      alt=""
-                      fetchpriority="high"
-                      draggable="false">
-                  </div>
-                </div>
-              </div>
-              <span class="hand-note" aria-hidden="true"
-                >hands on!
-                <svg viewBox="0 0 64 40" fill="none">
-                  <path
-                    d="M2 34c14 3 27-1 28-13 0-7-9-9-11-2-2 13 27 13 40-13m-12 5 13-6 1 13"
-                    stroke="currentColor"
-                    stroke-width="1.7"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  /></svg
-              ></span>
+          <aside class="spec-panel" aria-label="Specification">
+            <div class="spec-head">
+              <span class="micro">Specification</span>
+              <span class="micro">Unit / RE—01</span>
             </div>
-            <figcaption class="art-caption">
-              <span class="plate-credit"><b class="micro">Fig. 01</b><span>Hand study</span></span>
-              <span class="art-tools enhanced">
-                <button class="remix" type="button" data-remix>
-                  <span class="ink-pair" aria-hidden="true"></span>Remix ink
-                  <span class="mix-counter" aria-hidden="true">1/3</span>
-                </button>
-                <button
-                  class="plate-motion"
-                  data-motion-toggle
-                  type="button"
-                  aria-label="Cover motion"
-                  title="Pause motion"
-                  aria-pressed="true"
-                >
-                  <svg class="icon" aria-hidden="true" focusable="false">
-                    <use href="assets/press/symbols.svg#pause" />
-                  </svg>
-                </button>
-              </span>
-            </figcaption>
-          </figure>
-        </div>
-        <div class="wrap cover-foot">
-          <a href="#work" class="scroll-link micro"
-            ><span
-              ><svg class="icon" aria-hidden="true" focusable="false">
-                <use href="assets/press/symbols.svg#down" /></svg></span
-            >Scroll to explore</a
-          >
-          <div class="geo micro">
-            <svg class="icon" aria-hidden="true" focusable="false">
-              <use href="assets/press/symbols.svg#globe" />
-            </svg>
-            Philippines <span class="slash">/</span> <span data-clock>UTC+08:00</span>
-          </div>
+            <div class="spec-mark" aria-hidden="true">
+              <span class="spec-big">RE</span>
+              <span class="spec-sub">Built to work</span>
+            </div>
+            <dl class="spec-list">
+              <div><dt>Role</dt><dd>Web Developer</dd></div>
+              <div><dt>Stack</dt><dd>React · WordPress · JS</dd></div>
+              <div><dt>Systems</dt><dd>SQL · Data · Ops</dd></div>
+              <div><dt>Status</dt><dd><span class="status-dot" aria-hidden="true"></span> Open to projects</dd></div>
+            </dl>
+            <div class="hazard" aria-hidden="true"></div>
+          </aside>
         </div>
         <div class="practice-strip" aria-hidden="true">
           <div class="strip-reel">
             <div class="strand">
-              <span>Web development</span
-              ><svg class="icon" aria-hidden="true" focusable="false">
-                <use href="assets/press/symbols.svg#asterisk" /></svg
-              ><span>Interaction</span
-              ><svg class="icon" aria-hidden="true" focusable="false">
-                <use href="assets/press/symbols.svg#asterisk" /></svg
-              ><span>WordPress</span
-              ><svg class="icon" aria-hidden="true" focusable="false">
-                <use href="assets/press/symbols.svg#asterisk" /></svg
-              ><span>Creative coding</span
-              ><svg class="icon" aria-hidden="true" focusable="false">
-                <use href="assets/press/symbols.svg#asterisk" /></svg
-              ><span>Systems &amp; data</span
-              ><svg class="icon" aria-hidden="true" focusable="false">
-                <use href="assets/press/symbols.svg#asterisk" />
-              </svg>
+              <span>Web development</span><span class="sep">■</span>
+              <span>Interaction</span><span class="sep">■</span>
+              <span>WordPress</span><span class="sep">■</span>
+              <span>Creative coding</span><span class="sep">■</span>
+              <span>Systems &amp; data</span><span class="sep">■</span>
             </div>
             <div class="strand">
-              <span>Web development</span
-              ><svg class="icon" aria-hidden="true" focusable="false">
-                <use href="assets/press/symbols.svg#asterisk" /></svg
-              ><span>Interaction</span
-              ><svg class="icon" aria-hidden="true" focusable="false">
-                <use href="assets/press/symbols.svg#asterisk" /></svg
-              ><span>WordPress</span
-              ><svg class="icon" aria-hidden="true" focusable="false">
-                <use href="assets/press/symbols.svg#asterisk" /></svg
-              ><span>Creative coding</span
-              ><svg class="icon" aria-hidden="true" focusable="false">
-                <use href="assets/press/symbols.svg#asterisk" /></svg
-              ><span>Systems &amp; data</span
-              ><svg class="icon" aria-hidden="true" focusable="false">
-                <use href="assets/press/symbols.svg#asterisk" />
-              </svg>
+              <span>Web development</span><span class="sep">■</span>
+              <span>Interaction</span><span class="sep">■</span>
+              <span>WordPress</span><span class="sep">■</span>
+              <span>Creative coding</span><span class="sep">■</span>
+              <span>Systems &amp; data</span><span class="sep">■</span>
             </div>
           </div>
         </div>
       </section>
-      <section class="section work-section paper" id="work" aria-labelledby="work-title">
+
+      <section class="section work-section" id="work" aria-labelledby="work-title">
         <div class="wrap">
           <div class="section-top">
-            <p class="chapter">
-              <span class="chapter-no">(01)</span><span class="chapter-line" aria-hidden="true"></span>Project
-              archive
-            </p>
-            <span class="micro">Two project files</span>
+            <p class="chapter"><span class="chapter-no">01</span><span class="chapter-line" aria-hidden="true"></span>Selected work</p>
+            <span class="micro">02 units</span>
           </div>
           <div class="work-head">
-            <h2 class="display section-title" id="work-title">
-              Selected work<span class="red-stop">.</span>
-            </h2>
+            <h2 class="display section-title" id="work-title">Work<span class="accent-stop">.</span></h2>
             <div class="view-switch enhanced" role="group" aria-label="Project layout">
               <button type="button" aria-controls="project-archive" data-view="gallery" aria-pressed="true">
-                <svg class="icon" aria-hidden="true" focusable="false">
-                  <use href="assets/press/symbols.svg#grid" /></svg
-                >Gallery</button
-              ><button type="button" aria-controls="project-archive" data-view="index" aria-pressed="false">
-                <svg class="icon" aria-hidden="true" focusable="false">
-                  <use href="assets/press/symbols.svg#list" /></svg
-                >Index
-              </button>
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="assets/press/symbols.svg#grid" /></svg>Gallery</button>
+              <button type="button" aria-controls="project-archive" data-view="index" aria-pressed="false">
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="assets/press/symbols.svg#list" /></svg>Index</button>
             </div>
           </div>
           <div class="work-archive" id="project-archive" data-layout="gallery">
-            <article class="work-entry entry-cafe" aria-labelledby="title-pawpaw-cafe">
-              <div class="proof-art proof-cafe" aria-hidden="true">
-                <span class="proof-imprint">Plate 01 / Table study</span
-                ><span class="registration-cross"></span>
-                <div class="brunch-slip">
-                  <img
-                    src="assets/pawpaw-brunch.jpg"
-                    width="500"
-                    height="334"
-                    loading="lazy"
-                    decoding="async"
-                    alt="">
-                  <span>Brunch in Brisbane.</span>
-                </div>
-                <img
-                  class="phone-print"
-                  src="assets/screens/pawpaw-arrival.webp"
-                  width="780"
-                  height="1220"
-                  loading="lazy"
-                  decoding="async"
-                  alt="">
-                <span class="press-colors"><i></i><i></i><i></i></span>
+            <article class="work-entry" aria-labelledby="title-pawpaw-cafe">
+              <div class="proof-art">
+                <span class="proof-imprint">Unit 01 / Hospitality — Brisbane, AU</span>
+                <img src="assets/screens/pawpaw-arrival.webp" width="780" height="1220" loading="lazy" decoding="async" alt="Pawpaw Cafe mobile landing page with opening status and booking actions.">
               </div>
               <div class="entry-info">
-                <p class="entry-meta">
-                  <span class="file-no">File 01</span
-                  ><span>Hospitality <span aria-hidden="true">/</span> Brisbane, AU</span>
-                </p>
+                <p class="entry-meta"><span class="file-no">Unit 01</span><span>Hospitality / Brisbane, AU</span></p>
                 <h3 class="entry-name" id="title-pawpaw-cafe">Pawpaw Cafe</h3>
-                <p class="entry-summary">
-                  I built the dietary filters, opening-hours display, and booking links for Pawpaw’s café
-                  site.
-                </p>
+                <p class="entry-summary">I built the dietary filters, opening-hours display, and booking links for Pawpaw’s café site.</p>
                 <p class="entry-tech">React · Front-end development</p>
                 <div class="entry-actions">
-                  <a class="project-link" href="work/pawpaw-cafe.html"
-                    >Project notes<span class="sr-only">: Pawpaw Cafe</span>
-                    <svg class="icon" aria-hidden="true" focusable="false">
-                      <use href="assets/press/symbols.svg#right" /></svg
-                  ></a>
-                  <a
-                    class="visit-link"
-                    href="https://pawpaw-cafe.vercel.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >Live site<span class="sr-only">: Pawpaw Cafe (opens in a new tab)</span>
-                    <svg class="icon" aria-hidden="true" focusable="false">
-                      <use href="assets/press/symbols.svg#out" /></svg
-                  ></a>
+                  <a class="project-link" href="work/pawpaw-cafe.html">Project notes<span class="sr-only">: Pawpaw Cafe</span>
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="assets/press/symbols.svg#right" /></svg></a>
+                  <a class="visit-link" href="https://pawpaw-cafe.vercel.app/" target="_blank" rel="noopener noreferrer">Live site<span class="sr-only">: Pawpaw Cafe (opens in a new tab)</span>
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="assets/press/symbols.svg#out" /></svg></a>
                 </div>
               </div>
             </article>
-            <article class="work-entry entry-atlas" aria-labelledby="title-marci-metzger">
-              <div class="proof-art proof-atlas" aria-hidden="true">
-                <span class="proof-imprint">Plate 02 / Field guide</span
-                ><span class="registration-cross"></span>
-                <div class="map-key">
-                  <svg
-                    class="north-arrow"
-                    viewBox="0 0 40 55"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linejoin="round"
-                  >
-                    <path d="M20 3 33 40 20 32 7 40 20 3Z" />
-                    <path d="M20 3v29l13 8z" fill="currentColor" />
-                    <path d="M5 47h30m-30-3v6m15-6v6m15-6v6" />
-                  </svg>
-                  <b>NV<span>.</span></b
-                  ><small>Pahrump<br>Nevada</small>
-                </div>
-                <img
-                  class="survey-print"
-                  src="assets/screens/marci-search.webp"
-                  srcset="assets/screens/marci-search-860.webp 860w, assets/screens/marci-search.webp 1440w"
-                  sizes="(max-width: 760px) 70vw, (max-width: 1650px) 45vw, 700px"
-                  width="1440"
-                  height="1069"
-                  loading="lazy"
-                  decoding="async"
-                  alt="">
-                <span class="survey-scale"></span>
+            <article class="work-entry entry-alt" aria-labelledby="title-marci-metzger">
+              <div class="proof-art">
+                <span class="proof-imprint">Unit 02 / Real estate — Pahrump, US</span>
+                <img src="assets/screens/marci-search.webp" srcset="assets/screens/marci-search-860.webp 860w, assets/screens/marci-search.webp 1440w" sizes="(max-width: 760px) 90vw, 700px" width="1440" height="1069" loading="lazy" decoding="async" alt="Marci Metzger home search interface for buyers.">
               </div>
               <div class="entry-info">
-                <p class="entry-meta">
-                  <span class="file-no">File 02</span
-                  ><span>Real estate <span aria-hidden="true">/</span> Pahrump, US</span>
-                </p>
+                <p class="entry-meta"><span class="file-no">Unit 02</span><span>Real estate / Pahrump, US</span></p>
                 <h3 class="entry-name" id="title-marci-metzger">Marci Metzger</h3>
-                <p class="entry-summary">
-                  I built a home-search interface for buyers and a separate valuation form for sellers.
-                </p>
+                <p class="entry-summary">I built a home-search interface for buyers and a separate valuation form for sellers.</p>
                 <p class="entry-tech">HTML · CSS · JavaScript</p>
                 <div class="entry-actions">
-                  <a class="project-link" href="work/marci-metzger.html"
-                    >Project notes<span class="sr-only">: Marci Metzger</span>
-                    <svg class="icon" aria-hidden="true" focusable="false">
-                      <use href="assets/press/symbols.svg#right" /></svg
-                  ></a>
-                  <a
-                    class="visit-link"
-                    href="https://marcimetzger-sandy.vercel.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >Live site<span class="sr-only">: Marci Metzger (opens in a new tab)</span>
-                    <svg class="icon" aria-hidden="true" focusable="false">
-                      <use href="assets/press/symbols.svg#out" /></svg
-                  ></a>
+                  <a class="project-link" href="work/marci-metzger.html">Project notes<span class="sr-only">: Marci Metzger</span>
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="assets/press/symbols.svg#right" /></svg></a>
+                  <a class="visit-link" href="https://marcimetzger-sandy.vercel.app/" target="_blank" rel="noopener noreferrer">Live site<span class="sr-only">: Marci Metzger (opens in a new tab)</span>
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="assets/press/symbols.svg#out" /></svg></a>
                 </div>
               </div>
             </article>
           </div>
         </div>
       </section>
+
       <section class="section profile" id="about" aria-labelledby="about-title">
         <div class="wrap">
           <div class="section-top">
-            <p class="chapter">
-              <span class="chapter-no">(02)</span><span class="chapter-line" aria-hidden="true"></span>Profile
-            </p>
-            <span class="micro">Field notes / R.E.</span>
+            <p class="chapter"><span class="chapter-no">02</span><span class="chapter-line" aria-hidden="true"></span>Profile</p>
+            <span class="micro">Operator / R.E.</span>
           </div>
           <div class="profile-grid">
             <figure class="profile-photo">
               <div class="photo-print">
-                <img
-                  src="assets/portrait.jpg"
-                  width="768"
-                  height="1258"
-                  loading="lazy"
-                  alt="Portrait of Rozel Eliodra">
+                <img src="assets/portrait.jpg" width="768" height="1258" loading="lazy" alt="Portrait of Rozel Eliodra">
               </div>
-              <figcaption class="micro"><span>Fig. 02 / Rozel Eliodra</span><span>PH</span></figcaption>
+              <figcaption class="micro"><span>Rozel Eliodra</span><span>PH — UTC+08:00</span></figcaption>
             </figure>
             <div class="profile-text">
-              <h2 class="display section-title" id="about-title">
-                Behind the build<span class="red-stop">.</span>
-              </h2>
+              <h2 class="display section-title" id="about-title">Behind the build<span class="accent-stop">.</span></h2>
               <p class="profile-lead">Good interfaces start with understanding how things work.</p>
-              <p>
-                I’m Rozel, a web developer and IT professional based in Balo-i, Lanao del Norte. My background
-                in database systems shapes how I approach the front end: clear structure first, then the
-                details that make it feel human.
-              </p>
+              <p>I’m Rozel, a web developer and IT professional based in Balo-i, Lanao del Norte. My background in database systems shapes how I approach the front end: clear structure first, then the details that make it feel human.</p>
               <ul class="cap-list" aria-label="Capabilities">
                 <li>Front-end development</li>
                 <li>WordPress &amp; Elementor</li>
@@ -406,100 +223,60 @@
           </div>
           <div class="record-grid" id="experience">
             <div>
-              <p class="micro">The working record</p>
-              <h3 class="record-title">
-                Experience<br>
-                &amp; education.
-              </h3>
+              <p class="micro">Service record</p>
+              <h3 class="record-title">Experience<br>&amp; education.</h3>
             </div>
             <div class="records">
               <details open>
-                <summary>
-                  <span><small>Oct 2025 — Present</small><strong>Web Developer</strong></span
-                  ><svg class="icon" aria-hidden="true" focusable="false">
-                    <use href="assets/press/symbols.svg#plus" />
-                  </svg>
-                </summary>
+                <summary><span><small>Oct 2025 — Present</small><strong>Web Developer</strong></span>
+                  <svg class="icon" aria-hidden="true" focusable="false"><use href="assets/press/symbols.svg#plus" /></svg></summary>
                 <div>
                   <p class="record-org">Tetelestai Web Development Services · Philippines</p>
-                  <p>
-                    Developing and maintaining responsive WordPress websites, integrating forms and plugins,
-                    and translating client requirements into dependable page builds.
-                  </p>
+                  <p>Developing and maintaining responsive WordPress websites, integrating forms and plugins, and translating client requirements into dependable page builds.</p>
                 </div>
               </details>
               <details>
-                <summary>
-                  <span><small>Jul — Sep 2025</small><strong>Bookkeeper / Inventory Clerk</strong></span
-                  ><svg class="icon" aria-hidden="true" focusable="false">
-                    <use href="assets/press/symbols.svg#plus" />
-                  </svg>
-                </summary>
+                <summary><span><small>Jul — Sep 2025</small><strong>Bookkeeper / Inventory Clerk</strong></span>
+                  <svg class="icon" aria-hidden="true" focusable="false"><use href="assets/press/symbols.svg#plus" /></svg></summary>
                 <div>
                   <p class="record-org">SODA Trade Corporation · Palao, Iligan City</p>
-                  <p>
-                    Reconciled accounts and inventory, maintained ledgers, and built weekly Excel reports with
-                    lookups, pivot tables, and validation checks.
-                  </p>
+                  <p>Reconciled accounts and inventory, maintained ledgers, and built weekly Excel reports with lookups, pivot tables, and validation checks.</p>
                 </div>
               </details>
               <details>
-                <summary>
-                  <span><small>May — Jun 2025</small><strong>Office Aid</strong></span
-                  ><svg class="icon" aria-hidden="true" focusable="false">
-                    <use href="assets/press/symbols.svg#plus" />
-                  </svg>
-                </summary>
+                <summary><span><small>May — Jun 2025</small><strong>Office Aid</strong></span>
+                  <svg class="icon" aria-hidden="true" focusable="false"><use href="assets/press/symbols.svg#plus" /></svg></summary>
                 <div>
                   <p class="record-org">Local Government Unit of Balo-i</p>
-                  <p>
-                    Handled records, correspondence, database entry, and inter-department coordination with a
-                    focus on accuracy and audit readiness.
-                  </p>
+                  <p>Handled records, correspondence, database entry, and inter-department coordination with a focus on accuracy and audit readiness.</p>
                 </div>
               </details>
               <details>
-                <summary>
-                  <span
-                    ><small>Education / 2020 — 2025</small><strong>BS in Information Technology</strong></span
-                  ><svg class="icon" aria-hidden="true" focusable="false">
-                    <use href="assets/press/symbols.svg#plus" />
-                  </svg>
-                </summary>
+                <summary><span><small>Education / 2020 — 2025</small><strong>BS in Information Technology</strong></span>
+                  <svg class="icon" aria-hidden="true" focusable="false"><use href="assets/press/symbols.svg#plus" /></svg></summary>
                 <div>
                   <p class="record-org">Mindanao State University at Naawan</p>
-                  <p>
-                    Major in Database Systems. A foundation in organizing information, validating data, and
-                    understanding the systems behind an interface.
-                  </p>
+                  <p>Major in Database Systems. A foundation in organizing information, validating data, and understanding the systems behind an interface.</p>
                 </div>
               </details>
             </div>
           </div>
         </div>
       </section>
-      <section class="section lab-section paper" id="playground" aria-labelledby="lab-title">
+
+      <section class="section lab-section" id="playground" aria-labelledby="lab-title">
         <div class="wrap">
           <div class="section-top">
-            <p class="chapter">
-              <span class="chapter-no">(03)</span
-              ><span class="chapter-line" aria-hidden="true"></span>Playground
-            </p>
-            <span class="micro">An ongoing experiment</span>
+            <p class="chapter"><span class="chapter-no">03</span><span class="chapter-line" aria-hidden="true"></span>Prototype lab</p>
+            <span class="micro">Ongoing experiment</span>
           </div>
           <div class="lab-heading">
-            <h2 class="display section-title" id="lab-title">Form lab<span class="red-stop">.</span></h2>
+            <h2 class="display section-title" id="lab-title">Form lab<span class="accent-stop">.</span></h2>
             <p>A little geometry, drawn with code. Turn a form, pick an ink, and take a print with you.</p>
           </div>
           <div class="lab-console" data-lab>
             <figure class="lab-output">
-              <svg
-                id="proof"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 640 412"
-                role="img"
-                aria-labelledby="proof-title"
-              >
+              <svg id="proof" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 412" role="img" aria-labelledby="proof-title">
                 <title id="proof-title">Form study: Knot in ultramarine ink</title>
                 <defs>
                   <pattern id="proof-dots" width="14" height="14" patternUnits="userSpaceOnUse">
@@ -511,110 +288,48 @@
                 <g fill="none" stroke="#4f4d45" stroke-width="1">
                   <path d="M18 25h14m-7-7v14m583-7h14m-7-7v14M18 387h14m-7-7v14m583-7h14m-7-7v14" />
                 </g>
-                <text
-                  x="44"
-                  y="30"
-                  font-family="monospace"
-                  font-size="10"
-                  fill="#31312c"
-                  letter-spacing="1.3"
-                >
-                  RE — FORM LAB
-                </text>
-                <text
-                  data-proof-code
-                  x="596"
-                  y="30"
-                  text-anchor="end"
-                  font-family="monospace"
-                  font-size="10"
-                  fill="#31312c"
-                >
-                  STUDY 01
-                </text>
-                <g
-                  fill="none"
-                  stroke="#2449c9"
-                  stroke-width="1.12"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
+                <text x="44" y="30" font-family="monospace" font-size="10" fill="#31312c" letter-spacing="1.3">RE — FORM LAB</text>
+                <text data-proof-code x="596" y="30" text-anchor="end" font-family="monospace" font-size="10" fill="#31312c">STUDY 01</text>
+                <g fill="none" stroke="#2449c9" stroke-width="1.12" stroke-linecap="round" stroke-linejoin="round">
                   <use data-first-frame href="assets/press/knot.svg#mesh" />
                   <path data-mesh="" />
                 </g>
-                <text
-                  data-proof-name
-                  x="44"
-                  y="390"
-                  font-family="monospace"
-                  font-size="11"
-                  letter-spacing="1"
-                  fill="#31312c"
-                >
-                  KNOT / ULTRAMARINE
-                </text>
-                <text x="596" y="390" text-anchor="end" font-family="monospace" font-size="10" fill="#31312c">
-                  R. ELIODRA
-                </text>
+                <text data-proof-name x="44" y="390" font-family="monospace" font-size="11" letter-spacing="1" fill="#31312c">KNOT / ULTRAMARINE</text>
+                <text x="596" y="390" text-anchor="end" font-family="monospace" font-size="10" fill="#31312c">R. ELIODRA</text>
               </svg>
               <figcaption class="micro">
-                <svg class="icon" aria-hidden="true" focusable="false">
-                  <use href="assets/press/symbols.svg#orbit" />
-                </svg>
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="assets/press/symbols.svg#orbit" /></svg>
                 <span class="lab-hint">Generative drawing / plate 01</span>
               </figcaption>
             </figure>
             <div class="lab-controls" hidden>
-              <p class="micro lab-panel-title">
-                <span class="index-box" aria-hidden="true"></span>Print controls
-              </p>
+              <p class="micro lab-panel-title"><span class="index-box" aria-hidden="true"></span>Print controls</p>
               <fieldset>
                 <legend>01 / Geometry</legend>
                 <div class="choice-row">
-                  <label><input type="radio" name="geometry" value="knot" checked><span>Knot</span></label
-                  ><label><input type="radio" name="geometry" value="ring"><span>Ring</span></label
-                  ><label><input type="radio" name="geometry" value="ribbon"><span>Ribbon</span></label>
+                  <label><input type="radio" name="geometry" value="knot" checked><span>Knot</span></label>
+                  <label><input type="radio" name="geometry" value="ring"><span>Ring</span></label>
+                  <label><input type="radio" name="geometry" value="ribbon"><span>Ribbon</span></label>
                 </div>
               </fieldset>
               <fieldset>
                 <legend>02 / Ink color</legend>
                 <div class="ink-row">
-                  <label style="--swatch: #2449c9">
-                    <input type="radio" name="ink" value="#2449c9" data-name="Ultramarine" checked>
-                    <span>Ultramarine</span>
-                  </label>
-                  <label style="--swatch: #c34327">
-                    <input type="radio" name="ink" value="#c34327" data-name="Vermilion">
-                    <span>Vermilion</span>
-                  </label>
-                  <label style="--swatch: #282824">
-                    <input type="radio" name="ink" value="#282824" data-name="Carbon">
-                    <span>Carbon</span>
-                  </label>
+                  <label style="--swatch: #2449c9"><input type="radio" name="ink" value="#2449c9" data-name="Ultramarine" checked><span>Ultramarine</span></label>
+                  <label style="--swatch: #c34327"><input type="radio" name="ink" value="#c34327" data-name="Vermilion"><span>Vermilion</span></label>
+                  <label style="--swatch: #282824"><input type="radio" name="ink" value="#282824" data-name="Carbon"><span>Carbon</span></label>
                 </div>
               </fieldset>
               <div class="angle-control">
-                <label for="angle">03 / Rotation</label><output for="angle" id="angle-value">24°</output
-                ><input id="angle" type="range" min="0" max="360" value="24" step="1">
+                <label for="angle">03 / Rotation</label><output for="angle" id="angle-value">24°</output>
+                <input id="angle" type="range" min="0" max="360" value="24" step="1">
               </div>
-              <button type="button" class="solid-link export-print">
-                Save SVG
-                <svg class="icon" aria-hidden="true" focusable="false">
-                  <use href="assets/press/symbols.svg#download" />
-                </svg></button
-              ><button type="button" class="reset-print utility">
-                <svg class="icon" aria-hidden="true" focusable="false">
-                  <use href="assets/press/symbols.svg#remix" />
-                </svg>
-                Reset settings
-              </button>
+              <button type="button" class="solid-link export-print">Save SVG
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="assets/press/symbols.svg#download" /></svg></button>
+              <button type="button" class="reset-print utility">
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="assets/press/symbols.svg#remix" /></svg>Reset settings</button>
             </div>
-            <noscript
-              ><p class="lab-fallback">
-                A wireframe knot, plotted in ultramarine. Enable JavaScript to turn the form and export a
-                print.
-              </p></noscript
-            >
+            <noscript><p class="lab-fallback">A wireframe knot, plotted in ultramarine. Enable JavaScript to turn the form and export a print.</p></noscript>
           </div>
         </div>
       </section>
@@ -622,37 +337,24 @@
     <footer class="contact" id="contact" aria-labelledby="contact-title">
       <div class="wrap contact-inner">
         <div class="section-top">
-          <p class="chapter">
-            <span class="chapter-no">(04)</span><span class="chapter-line" aria-hidden="true"></span>Contact
-          </p>
+          <p class="chapter"><span class="chapter-no">04</span><span class="chapter-line" aria-hidden="true"></span>Contact</p>
           <span class="micro">Correspondence / PH</span>
         </div>
         <div class="contact-head">
           <div>
             <p class="contact-pre">Have a project in mind?</p>
-            <h2 class="display" id="contact-title">Let’s talk<span>.</span></h2>
+            <h2 class="display" id="contact-title">Let’s build<span>.</span></h2>
           </div>
-          <a class="contact-arrow" href="mailto:rhyseya@gmail.com" aria-label="Email Rozel Eliodra"
-            ><svg class="icon" aria-hidden="true" focusable="false">
-              <use href="assets/press/symbols.svg#out" /></svg
-          ></a>
+          <a class="contact-arrow" href="mailto:rhyseya@gmail.com" aria-label="Email Rozel Eliodra">
+            <svg class="icon" aria-hidden="true" focusable="false"><use href="assets/press/symbols.svg#out" /></svg></a>
         </div>
         <div class="contact-grid">
           <div>
             <p class="micro">01 / Email</p>
             <div class="mail-row">
-              <a class="mail" href="mailto:rhyseya@gmail.com">rhyseya@gmail.com</a
-              ><button
-                class="copy enhanced"
-                type="button"
-                data-copy="rhyseya@gmail.com"
-                aria-label="Copy email address"
-                title="Copy email address"
-              >
-                <svg class="icon" aria-hidden="true" focusable="false">
-                  <use href="assets/press/symbols.svg#copy" />
-                </svg>
-              </button>
+              <a class="mail" href="mailto:rhyseya@gmail.com">rhyseya@gmail.com</a>
+              <button class="copy enhanced" type="button" data-copy="rhyseya@gmail.com" aria-label="Copy email address" title="Copy email address">
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="assets/press/symbols.svg#copy" /></svg></button>
             </div>
           </div>
           <div>
@@ -670,26 +372,12 @@
           <span class="micro">© <span data-year>2026</span> Rozel Eliodra</span>
           <div class="utilities">
             <button class="utility enhanced" data-motion-toggle type="button" aria-pressed="true">
-              <svg class="icon" aria-hidden="true" focusable="false">
-                <use href="assets/press/symbols.svg#motion" />
-              </svg>
-              <span>Motion on</span></button
-            ><button
-              class="utility enhanced"
-              data-theme-toggle
-              type="button"
-              aria-label="Switch to dark theme"
-            >
-              <svg class="icon" aria-hidden="true" focusable="false">
-                <use href="assets/press/symbols.svg#contrast" /></svg
-              ><span>Paper mode</span>
-            </button>
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="assets/press/symbols.svg#motion" /></svg><span>Motion on</span></button>
+            <button class="utility enhanced" data-theme-toggle type="button" aria-label="Switch to dark theme">
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="assets/press/symbols.svg#contrast" /></svg><span>Light mode</span></button>
           </div>
-          <a class="utility up-link" href="#top"
-            >Back to top
-            <svg class="icon" aria-hidden="true" focusable="false">
-              <use href="assets/press/symbols.svg#up" /></svg
-          ></a>
+          <a class="utility up-link" href="#top">Back to top
+            <svg class="icon" aria-hidden="true" focusable="false"><use href="assets/press/symbols.svg#up" /></svg></a>
         </div>
       </div>
     </footer>
