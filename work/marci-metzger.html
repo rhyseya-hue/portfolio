@@ -26,6 +26,7 @@
       }
     </script>
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../work.css">
     <script src="../assets/vendor/gsap/gsap.min.js" defer></script>
     <script src="../assets/vendor/gsap/ScrollTrigger.min.js" defer></script>
     <script src="../script.js" defer></script>
@@ -105,27 +106,77 @@
             ><span class="sr-only"> (opens in a new tab)</span></a
           >
         </div>
-        <figure class="case-billboard">
-          <span class="project-cover cover-marci" aria-hidden="true">
-            <span class="cover-id">RE / P—02</span><span class="cover-cross"></span>
-            <span class="cover-window"
-              ><span class="window-chrome"
-                ><i></i><i></i><i></i><small>marcimetzger-sandy.vercel.app</small></span
-              ><span class="web-nav"
-                ><b class="mm-logo">Marci Metzger</b><span>Homes &nbsp; About &nbsp; Contact</span></span
+        <section class="screenbook book-atlas" aria-labelledby="screens-title">
+          <div class="screenbar">
+            <h2 class="chapter" id="screens-title">Interface studies</h2>
+            <fieldset class="screen-picks">
+              <legend class="sr-only">Choose an interface screen</legend>
+              <label
+                ><input type="radio" name="screen" value="1" aria-controls="screen-1" checked><span
+                  >Home search</span
+                ></label
               >
-              <span class="mm-landing"
-                ><img src="../assets/marci-hero.webp" width="1600" height="1063" alt=""><span
-                  class="mm-words"
-                  ><small>Your Pahrump realtor</small><b>Life looks better<br><i>from here.</i></b
-                  ><span>Explore homes ↗</span></span
-                ></span
-              ></span
-            >
-            <span class="cover-legend">Interface study / Real estate</span>
-          </span>
-          <figcaption class="micro">Fig. 02 / Illustrated interface preview — Pahrump, Nevada</figcaption>
-        </figure>
+              <label
+                ><input type="radio" name="screen" value="2" aria-controls="screen-2"><span
+                  >Seller enquiry</span
+                ></label
+              >
+            </fieldset>
+          </div>
+          <figure id="screen-1" class="screen-page" data-screen="1">
+            <div class="screen-mat">
+              <img
+                src="../assets/screens/marci-search.webp"
+                srcset="
+                  ../assets/screens/marci-search-860.webp  860w,
+                  ../assets/screens/marci-search.webp     1440w
+                "
+                sizes="(max-width: 760px) 85vw, (max-width: 1650px) 57vw, 900px"
+                width="1440"
+                height="1069"
+                decoding="async"
+                alt="Marci Metzger’s Mountain Falls landing page and the buyer search form for location, property type, and price.">
+            </div>
+            <figcaption class="screen-note">
+              <span class="sheet-index micro"
+                >Fig. 02A <span aria-hidden="true">/</span> Desktop landing</span
+              >
+              <strong>Start with a place.</strong>
+              <p>
+                Mountain Falls sets the scene. Just below it, buyers can search by location, property type,
+                and budget.
+              </p>
+              <a class="proof-zoom" href="../assets/screens/marci-search.webp"
+                >Open full-size image<span class="sr-only">: Home search</span>
+                <svg class="icon" aria-hidden="true" focusable="false">
+                  <use href="../assets/press/symbols.svg#right" /></svg
+              ></a>
+            </figcaption>
+          </figure>
+          <figure id="screen-2" class="screen-page" data-screen="2">
+            <div class="screen-mat">
+              <img
+                src="../assets/screens/marci-valuation.webp"
+                width="927"
+                height="617"
+                decoding="async"
+                alt="Seller tab selected, with fields for a property address and moving timeline and a Request a home valuation button.">
+            </div>
+            <figcaption class="screen-note">
+              <span class="sheet-index micro">Fig. 02B <span aria-hidden="true">/</span> Valuation form</span>
+              <strong>A different next step.</strong>
+              <p>
+                Switching to “I’m selling” replaces the property search with two questions: the home’s address
+                and the owner’s moving timeline.
+              </p>
+              <a class="proof-zoom" href="../assets/screens/marci-valuation.webp"
+                >Open full-size image<span class="sr-only">: Seller enquiry</span>
+                <svg class="icon" aria-hidden="true" focusable="false">
+                  <use href="../assets/press/symbols.svg#right" /></svg
+              ></a>
+            </figcaption>
+          </figure>
+        </section>
         <dl class="case-spec">
           <div>
             <dt>Contribution</dt>

@@ -26,6 +26,7 @@
       }
     </script>
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../work.css">
     <script src="../assets/vendor/gsap/gsap.min.js" defer></script>
     <script src="../assets/vendor/gsap/ScrollTrigger.min.js" defer></script>
     <script src="../script.js" defer></script>
@@ -101,26 +102,70 @@
             ><span class="sr-only"> (opens in a new tab)</span></a
           >
         </div>
-        <figure class="case-billboard">
-          <span class="project-cover cover-paw" aria-hidden="true">
-            <span class="cover-id">RE / P—01</span><span class="cover-cross"></span>
-            <span class="cover-window"
-              ><span class="window-chrome"><i></i><i></i><i></i><small>pawpaw-cafe.vercel.app</small></span
-              ><span class="web-nav"
-                ><b class="pw-logo">pawpaw<span>café</span></b
-                ><span>Our story &nbsp; Menu &nbsp; Visit</span></span
+        <section class="screenbook book-cafe" aria-labelledby="screens-title">
+          <div class="screenbar">
+            <h2 class="chapter" id="screens-title">Interface studies</h2>
+            <fieldset class="screen-picks">
+              <legend class="sr-only">Choose an interface screen</legend>
+              <label
+                ><input type="radio" name="screen" value="1" aria-controls="screen-1" checked><span
+                  >Arrival</span
+                ></label
               >
-              <span class="pw-landing"
-                ><span class="pw-words"
-                  ><small>Woolloongabba · Brisbane</small
-                  ><b>All-day brunch<br>with a tropical <i>accent.</i></b
-                  ><span class="pw-book">Book a table ↗</span></span
-                ><img src="../assets/pawpaw-brunch.jpg" width="500" height="334" alt=""></span
-            ></span>
-            <span class="cover-legend">Interface study / Hospitality</span>
-          </span>
-          <figcaption class="micro">Fig. 01 / Illustrated interface preview — Brisbane, Australia</figcaption>
-        </figure>
+              <label
+                ><input type="radio" name="screen" value="2" aria-controls="screen-2"><span
+                  >Menu filters</span
+                ></label
+              >
+            </fieldset>
+          </div>
+          <figure id="screen-1" class="screen-page" data-screen="1">
+            <div class="screen-mat portrait-mat">
+              <img
+                src="../assets/screens/pawpaw-arrival.webp"
+                width="780"
+                height="1220"
+                decoding="async"
+                alt="Mobile Pawpaw Cafe landing page with opening status, brunch introduction, and booking and menu buttons.">
+            </div>
+            <figcaption class="screen-note">
+              <span class="sheet-index micro">Fig. 01A <span aria-hidden="true">/</span> Mobile landing</span>
+              <strong>A menu or a table?</strong>
+              <p>
+                The two actions sit together on the first screen: book straight away, or explore what the
+                kitchen is serving.
+              </p>
+              <a class="proof-zoom" href="../assets/screens/pawpaw-arrival.webp"
+                >Open full-size image<span class="sr-only">: Arrival</span>
+                <svg class="icon" aria-hidden="true" focusable="false">
+                  <use href="../assets/press/symbols.svg#right" /></svg
+              ></a>
+            </figcaption>
+          </figure>
+          <figure id="screen-2" class="screen-page" data-screen="2">
+            <div class="screen-mat">
+              <img
+                src="../assets/screens/pawpaw-menu.webp"
+                width="1104"
+                height="947"
+                decoding="async"
+                alt="Pawpaw’s breakfast menu with the Vegetarian filter selected, seven matching dishes, and a Book a table button.">
+            </div>
+            <figcaption class="screen-note">
+              <span class="sheet-index micro">Fig. 01B <span aria-hidden="true">/</span> Menu detail</span>
+              <strong>A menu that narrows down.</strong>
+              <p>
+                Choosing a dietary filter updates the dish count. The table-booking button stays just beneath
+                the controls.
+              </p>
+              <a class="proof-zoom" href="../assets/screens/pawpaw-menu.webp"
+                >Open full-size image<span class="sr-only">: Menu filters</span>
+                <svg class="icon" aria-hidden="true" focusable="false">
+                  <use href="../assets/press/symbols.svg#right" /></svg
+              ></a>
+            </figcaption>
+          </figure>
+        </section>
         <dl class="case-spec">
           <div>
             <dt>Contribution</dt>
